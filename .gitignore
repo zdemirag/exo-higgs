@@ -1,0 +1,13 @@
+*.root
+*.pdf
+*.so
+*.png
+*.pyc
+macros/ResolutionStudies/Data_Fits_Ex/*
+macros/ResolutionStudies/Data_Fits_Ey/*
+macros/ResolutionStudies/MC_Fits_Ex/*
+macros/ResolutionStudies/MC_Fits_Ey/*
+macros/ResolutionStudies/U_Effort/*
+*.*~
+log*
+*.lhe
