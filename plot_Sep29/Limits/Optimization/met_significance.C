@@ -1,0 +1,118 @@
+{
+//=========Macro generated from canvas: c1/c1
+//=========  (Tue Oct  7 13:47:03 2014) by ROOT version5.32/00
+   TCanvas *c1 = new TCanvas("c1", "c1",190,22,600,602);
+   gStyle->SetOptFit(1);
+   gStyle->SetOptTitle(0);
+   c1->Range(-2.256097,-10.62845,34.32927,71.12887);
+   c1->SetFillColor(0);
+   c1->SetBorderMode(0);
+   c1->SetBorderSize(2);
+   c1->SetGridx();
+   c1->SetGridy();
+   c1->SetTickx(1);
+   c1->SetTicky(1);
+   c1->SetLeftMargin(0.13);
+   c1->SetRightMargin(0.05);
+   c1->SetTopMargin(0.05);
+   c1->SetBottomMargin(0.13);
+   c1->SetFrameFillStyle(0);
+   c1->SetFrameBorderMode(0);
+   c1->SetFrameFillStyle(0);
+   c1->SetFrameBorderMode(0);
+   
+   TGraph *graph = new TGraph(6);
+   graph->SetName("Graph");
+   graph->SetTitle("Graph");
+   graph->SetFillColor(1);
+   graph->SetLineColor(0);
+   graph->SetLineWidth(0);
+   graph->SetMarkerColor(0);
+   graph->SetMarkerStyle(3);
+   graph->SetMarkerSize(0);
+   graph->SetPoint(0,5,61.45);
+   graph->SetPoint(1,10,32.81);
+   graph->SetPoint(2,15,12.81);
+   graph->SetPoint(3,20,6.9);
+   graph->SetPoint(4,25,5.54);
+   graph->SetPoint(5,30,6.07);
+   
+   TH1F *Graph_Graph1 = new TH1F("Graph_Graph1","Graph",100,2.5,32.5);
+   Graph_Graph1->SetMinimum(0);
+   Graph_Graph1->SetMaximum(67.041);
+   Graph_Graph1->SetDirectory(0);
+   Graph_Graph1->SetStats(0);
+   Graph_Graph1->SetLineStyle(0);
+   Graph_Graph1->SetMarkerStyle(20);
+   Graph_Graph1->GetXaxis()->SetTitle("Met Significance Cut [GeV]");
+   Graph_Graph1->GetXaxis()->SetLabelFont(42);
+   Graph_Graph1->GetXaxis()->SetLabelOffset(0.007);
+   Graph_Graph1->GetXaxis()->SetTitleSize(0.05);
+   Graph_Graph1->GetXaxis()->SetTitleOffset(0.9);
+   Graph_Graph1->GetXaxis()->SetTitleFont(42);
+   Graph_Graph1->GetYaxis()->SetTitle("Expected Signal Strengh");
+   Graph_Graph1->GetYaxis()->SetLabelFont(42);
+   Graph_Graph1->GetYaxis()->SetLabelOffset(0.007);
+   Graph_Graph1->GetYaxis()->SetTitleSize(0.05);
+   Graph_Graph1->GetYaxis()->SetTitleOffset(1.05);
+   Graph_Graph1->GetYaxis()->SetTitleFont(42);
+   Graph_Graph1->GetZaxis()->SetLabelFont(42);
+   Graph_Graph1->GetZaxis()->SetLabelOffset(0.007);
+   Graph_Graph1->GetZaxis()->SetLabelSize(0.05);
+   Graph_Graph1->GetZaxis()->SetTitleSize(0.06);
+   Graph_Graph1->GetZaxis()->SetTitleFont(42);
+   graph->SetHistogram(Graph_Graph1);
+   
+   graph->Draw("app");
+   
+   graph = new TGraph(6);
+   graph->SetName("Graph");
+   graph->SetTitle("Graph");
+   graph->SetFillColor(1);
+   graph->SetLineColor(4);
+   graph->SetMarkerColor(4);
+   graph->SetMarkerStyle(20);
+   graph->SetPoint(0,5,61.45);
+   graph->SetPoint(1,9.959486107,32.82299021);
+   graph->SetPoint(2,15,12.81);
+   graph->SetPoint(3,20,6.9);
+   graph->SetPoint(4,25,5.54);
+   graph->SetPoint(5,30,6.07);
+   
+   TH1F *Graph_Graph2 = new TH1F("Graph_Graph2","Graph",100,2.5,32.5);
+   Graph_Graph2->SetMinimum(0);
+   Graph_Graph2->SetMaximum(67.041);
+   Graph_Graph2->SetDirectory(0);
+   Graph_Graph2->SetStats(0);
+   Graph_Graph2->SetLineStyle(0);
+   Graph_Graph2->SetMarkerStyle(20);
+   Graph_Graph2->GetXaxis()->SetLabelFont(42);
+   Graph_Graph2->GetXaxis()->SetLabelOffset(0.007);
+   Graph_Graph2->GetXaxis()->SetLabelSize(0.05);
+   Graph_Graph2->GetXaxis()->SetTitleSize(0.06);
+   Graph_Graph2->GetXaxis()->SetTitleOffset(0.9);
+   Graph_Graph2->GetXaxis()->SetTitleFont(42);
+   Graph_Graph2->GetYaxis()->SetLabelFont(42);
+   Graph_Graph2->GetYaxis()->SetLabelOffset(0.007);
+   Graph_Graph2->GetYaxis()->SetLabelSize(0.05);
+   Graph_Graph2->GetYaxis()->SetTitleSize(0.06);
+   Graph_Graph2->GetYaxis()->SetTitleOffset(1.05);
+   Graph_Graph2->GetYaxis()->SetTitleFont(42);
+   Graph_Graph2->GetZaxis()->SetLabelFont(42);
+   Graph_Graph2->GetZaxis()->SetLabelOffset(0.007);
+   Graph_Graph2->GetZaxis()->SetLabelSize(0.05);
+   Graph_Graph2->GetZaxis()->SetTitleSize(0.06);
+   Graph_Graph2->GetZaxis()->SetTitleFont(42);
+   graph->SetHistogram(Graph_Graph2);
+   
+   graph->Draw("CP");
+   TLatex *   tex = new TLatex(0.8691275,0.9615385,"CMS Preliminary, #sqrt{s} = 8 TeV");
+tex->SetNDC();
+   tex->SetTextAlign(31);
+   tex->SetTextSize(0.04);
+   tex->SetLineWidth(2);
+   tex->Draw();
+   c1->Modified();
+   c1->cd();
+   c1->SetSelected(c1);
+}
