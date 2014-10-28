@@ -1,0 +1,24 @@
+#  datacard for MChi_70 signal 
+imax 1 number of channels 
+jmax 7 number of backgrounds 
+kmax 10 number of nuisance parameters 
+--------------- 
+--------------- 
+bin        MChi_70 
+observation 1306 
+--------------- 
+bin     MChi_70 MChi_70 MChi_70 MChi_70 MChi_70 MChi_70 MChi_70 MChi_70 
+process MChi_70 DiPhoton WtoLNu  WGamma  ZGamma  QCD     EFake   PJets 
+process 0       1        2       3       4       5       6       7 
+rate    39.392   1.131     85.447 160.004 192.047 272.022 358.141 182.987 
+--------------- 
+lumi    lnN 1.026 1.026 1.026 1.026 1.026 1.0   1.0   1.026 
+qcd     lnN -      -      -     -    -    1.35   -     -    
+efake   lnN -      -      -     -    -     -    1.06   -    
+phoEn   lnN 1.04  1.04  1.04  1.04  1.04  -   -     1.04    
+metsys  lnN 1.04  1.04  1.04  1.04  1.04  -   -     1.04    
+kfacorP lnN -     -     -  -  -      -     -    1.16  
+kfacorW lnN -     -     1.05  -  -      -     -    -  
+kfacorZ lnN -     -     -  1.05  -      -     -    -  
+pusys   lnN 1.01   1.01   1.01  1.01  1.01      -     -    1.01  
+pdfsig  lnN 1.1  -     -     -     -      -      -     -  
