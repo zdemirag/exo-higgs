@@ -27,14 +27,18 @@ def plot_nice1D(channel, var, bin, low, high, ylabel, xlabel, save, setLog = Fal
     # Choose 1, ratio or pull
     drawPull = False
     drawRatio = True
+
+
+    #folder = 'Trig_Sys'
+    folder = 'JEC_CR1'
     
-    folder = 'Preliminary'
+    #folder = 'Preliminary'
     #folder = 'Lepton_CR'
     #folder = 'ModelIndep'
     #folder = 'SusyHiggs'
 
-    #folder = 'newReso'
-    
+    #folder = 'Sys'
+
     #No Tau
 
     List = [ 'DiPhotonJets','DiphotonBox_Pt_25to250','DiphotonBox_Pt_250toInf','WtoLNuMu','WtoLNuTau','WGamma','ZGToLLG','ZGamma_Inclusive','efake_dd','qcd_dd','GJets_HT_40To100','GJets_HT_100To200','GJets_HT_200To400','GJets_HT_400','SinglePhotonParked','DM','MChi_70'] 
@@ -69,47 +73,56 @@ def plot_nice1D(channel, var, bin, low, high, ylabel, xlabel, save, setLog = Fal
     for Type in List:
 
         pu_weight  = "MyWeightData_new"
-        #pu_weight  = "MyWeightData_sys"
+        #pu_weight  = "MyWeightData_new_sys"
 
+        
+        #What i used for the pre-approval
+        trig_met   = "((0.5*0.977*(1+TMath::Erf( (MET - 28.23) / (25.0*sqrt(2))))) * (MET>40.) )"
         trig_phoid = "((0.5*0.892*(1+TMath::Erf( (Pho_Pt  + 36.8) / (43.8*sqrt(2))))) * (Pho_Pt  >30.) )"
-        trig_met   = "((0.5*0.986*(1+TMath::Erf( (MET - 28.0) / (26.0*sqrt(2))))) * (MET>40.) )"
+
+
+        #Shift up, met
+        #trig_met   = "((0.5*0.98*(1+TMath::Erf( (MET - 28.33) / (25.3*sqrt(2))))) * (MET>40.) )"
+        #trig_phoid = "((0.5*0.892*(1+TMath::Erf( (Pho_Pt  + 36.8) / (43.8*sqrt(2))))) * (Pho_Pt  >30.) )"
+        
+        #Shift down, met
+        #trig_met   = "((0.5*0.98*(1+TMath::Erf( (MET - 28.33) / (25.3*sqrt(2))))) * (MET>40.) )"
+        #trig_phoid = "((0.5*0.892*(1+TMath::Erf( (Pho_Pt  + 36.8) / (43.8*sqrt(2))))) * (Pho_Pt  >30.) )"
+        
+
+
+        #trig_phoid = "((0.5*0.89*(1+TMath::Erf( (Pho_Pt  - 19.44) / (7.15*sqrt(2))))) * (Pho_Pt  >30.) )"
+        #trig_met   = "((0.5*0.977*(1+TMath::Erf( (MET - 28.23) / (25.0*sqrt(2))))) * (MET>40.) )"
+
+
+        #trig_phoid = "((0.5*0.892*(1+TMath::Erf( (Pho_Pt  + 36.8) / (43.8*sqrt(2))))) * (Pho_Pt  >30.) )"
+        #trig_met   = "((0.5*0.986*(1+TMath::Erf( (MET - 28.0) / (26.0*sqrt(2))))) * (MET>40.) )"
 
         puweight = "(1.0)"
+        #dphi_weight = "(0.380604 - 0.162698*TMath::Abs(dphi_pho_met) + 1.36338*pow(TMath::Abs(dphi_pho_met),2) - 0.446155*pow(TMath::Abs(dphi_pho_met),3)- 0.183011*pow(TMath::Abs(dphi_pho_met),4) + 0.103991*pow(TMath::Abs(dphi_pho_met),5) -0.0126396*pow(TMath::Abs(dphi_pho_met),6))"
+             
         
         if (Type.startswith('GJets')):
-            dphi_weight = "(1.0)"
-            #other_weight = "(1.0)"
-
             other_weight = "(1.7 * (n_jets_mva_loose == 0) + 1.1 * (n_jets_mva_loose > 0))"
-            dphi_weight = "(0.380604 - 0.162698*TMath::Abs(dphi_pho_met) + 1.36338*pow(TMath::Abs(dphi_pho_met),2) - 0.446155*pow(TMath::Abs(dphi_pho_met),3)- 0.183011*pow(TMath::Abs(dphi_pho_met),4) + 0.103991*pow(TMath::Abs(dphi_pho_met),5) -0.0126396*pow(TMath::Abs(dphi_pho_met),6))"
-                        
-            #other_weight = "( 1.69 * (n_jets_mva_loose == 0) +  0.92 * (n_jets_mva_loose == 1) +  0.915 * (n_jets_mva_loose == 2) +  0.914 * (n_jets_mva_loose == 3) +  0.913 * (n_jets_mva_loose ==4) + 1.05 * (n_jets_mva_loose == 5) + 1.2 * (n_jets_mva_loose > 5)  )"
-
-            #dphi_weight = "(0.353758 - 0.15625*TMath::Abs(dphi_pho_met) + 1.28186*pow(TMath::Abs(dphi_pho_met),2) - 0.429744*pow(TMath::Abs(dphi_pho_met),3)- 0.167905*pow(TMath::Abs(dphi_pho_met),4) + 0.097412*pow(TMath::Abs(dphi_pho_met),5) - 0.0118856*pow(TMath::Abs(dphi_pho_met),6))"
-
-            #other_weight = "( 0.91 * ( TMath::Log10(Pho_Pt/(HT+Pho_Pt)) < -1.5) +            0.72 * ( TMath::Log10(Pho_Pt/(HT+Pho_Pt)) < -1.25  && TMath::Log10(Pho_Pt/(HT+Pho_Pt)) >= -1.5) +            0.78 * ( TMath::Log10(Pho_Pt/(HT+Pho_Pt)) < -1.0   && TMath::Log10(Pho_Pt/(HT+Pho_Pt)) >= -1.25) +            0.80 * ( TMath::Log10(Pho_Pt/(HT+Pho_Pt)) < -0.75  && TMath::Log10(Pho_Pt/(HT+Pho_Pt)) >= -1.0) +            0.79 * ( TMath::Log10(Pho_Pt/(HT+Pho_Pt)) < -0.5   && TMath::Log10(Pho_Pt/(HT+Pho_Pt)) >= -0.75) +            0.84 * ( TMath::Log10(Pho_Pt/(HT+Pho_Pt)) < -0.25  && TMath::Log10(Pho_Pt/(HT+Pho_Pt)) >= -0.5) +            1.34 * ( TMath::Log10(Pho_Pt/(HT+Pho_Pt)) < 0      && TMath::Log10(Pho_Pt/(HT+Pho_Pt)) >= -0.25 ) +   1.69 * ( TMath::Log10(Pho_Pt/(HT+Pho_Pt)) < 0.25      && TMath::Log10(Pho_Pt/(HT+Pho_Pt)) >= 0 )    )"
-            
-            #dphi_weight = "(0.367514 - 0.170401*TMath::Abs(dphi_pho_met) + 1.35261*pow(TMath::Abs(dphi_pho_met),2) - 0.50516*pow(TMath::Abs(dphi_pho_met),3)- 0.141029*pow(TMath::Abs(dphi_pho_met),4) + 0.0939018*pow(TMath::Abs(dphi_pho_met),5) - 0.0118088*pow(TMath::Abs(dphi_pho_met),6))"
-
- 
+            dphi_weight = "(0.378403 - 0.159585*TMath::Abs(dphi_pho_met) + 1.35184*pow(TMath::Abs(dphi_pho_met),2) - 0.423989*pow(TMath::Abs(dphi_pho_met),3)- 0.19808*pow(TMath::Abs(dphi_pho_met),4) + 0.108294*pow(TMath::Abs(dphi_pho_met),5) - 0.0130729*pow(TMath::Abs(dphi_pho_met),6))"
+                     
         else:
-            dphi_weight = "(1.0)"
-            dphi_weight = "(0.380604 - 0.162698*TMath::Abs(dphi_pho_met) + 1.36338*pow(TMath::Abs(dphi_pho_met),2) - 0.446155*pow(TMath::Abs(dphi_pho_met),3)- 0.183011*pow(TMath::Abs(dphi_pho_met),4) + 0.103991*pow(TMath::Abs(dphi_pho_met),5) -0.0126396*pow(TMath::Abs(dphi_pho_met),6))"
-            #dphi_weight = "(0.304632 - 0.129272*TMath::Abs(dphi_pho_met) + 1.08701*pow(TMath::Abs(dphi_pho_met),2) - 0.34988*pow(TMath::Abs(dphi_pho_met),3)- 0.1512*pow(TMath::Abs(dphi_pho_met),4) + 0.0845441*pow(TMath::Abs(dphi_pho_met),5) - 0.0102399*pow(TMath::Abs(dphi_pho_met),6))"
             other_weight = "(1.0)"
+            dphi_weight = "(1.0)"
+
 
         #PRELIMINARY
         cut_standard ="(Pho_Pt > 45 && Pho_R9>0.9 &&TMath::Abs(Pho_Eta)<1.442 && sigmaIEtaIEta > 0.001  && sqrt(sigmaIPhiIPhi) > 0.001  &&  Pho_R9<1.0    && seedCrystalEnergy/(e1x3+e1x5-seedCrystalEnergy) < 0.9 && MET>40. && loose_mu_10==0 && foundvetoEl_10==0 )"
 
         #LEPTON_CR
         #cut_standard= "(Pho_Pt > 45 && Pho_R9>0.9 &&TMath::Abs(Pho_Eta)<1.442 && sigmaIEtaIEta > 0.001  && sqrt(sigmaIPhiIPhi) > 0.001  && seedCrystalEnergy/(e1x3+e1x5-seedCrystalEnergy) < 0.9 &&  Pho_R9<1.0  && MET>40. && (loose_mu_10==1 || foundvetoEl_10 == 1) )"
-
+        
         #MODELINDEP
-        #cut_standard ="(Pho_Pt > 45 && Pho_R9>0.9 &&TMath::Abs(Pho_Eta)<1.442 && sigmaIEtaIEta > 0.001  && sqrt(sigmaIPhiIPhi) > 0.001  &&  Pho_R9<1.0    && seedCrystalEnergy/(e1x3+e1x5-seedCrystalEnergy) < 0.9 && MET>40. && loose_mu_10==0 && foundvetoEl_10==0 && n_jets_mva_loose < 2 && (TMath::Abs(dphi_jet_pho) <2.5 || dphi_jet_pho == -99) )"
+        #cut_standard ="(Pho_Pt > 45 && Pho_R9>0.9 &&TMath::Abs(Pho_Eta)<1.442 && sigmaIEtaIEta > 0.001  && sqrt(sigmaIPhiIPhi) > 0.001  &&  Pho_R9<1.0    && seedCrystalEnergy/(e1x3+e1x5-seedCrystalEnergy) < 0.9 && MET>140. && loose_mu_10==0 && foundvetoEl_10==0 && n_jets_mva_loose < 2 && (TMath::Abs(dphi_jet_pho) <2.5 || dphi_jet_pho == -99) )"
 
         #SUSYHIGGS
-        #cut_standard= "(Pho_Pt > 45 && Pho_Pt<60.  && Pho_R9>0.9 &&TMath::Abs(Pho_Eta)<1.442 && sigmaIEtaIEta > 0.001  && sqrt(sigmaIPhiIPhi) > 0.001  && seedCrystalEnergy/(e1x3+e1x5-seedCrystalEnergy) < 0.9 &&  Pho_R9<1.0  && MET>40. && MetSig > 20 && loose_mu_10==0 && foundvetoEl_10 == 0 && MT > 100. && minMET>45.)" 
-        
+        #cut_standard= "(Pho_Pt > 45 && Pho_Pt<60.  && Pho_R9>0.9 &&TMath::Abs(Pho_Eta)<1.442 && sigmaIEtaIEta > 0.001  && sqrt(sigmaIPhiIPhi) > 0.001  && seedCrystalEnergy/(e1x3+e1x5-seedCrystalEnergy) < 0.9 &&  Pho_R9<1.0  && MET>40. && MetSig > 20 && loose_mu_10==0 && foundvetoEl_10 == 0 && MT > 100. && HT < 100. && minMET > 45 &&  TMath::Abs(TMath::Log10(pvalue)) > 2 && angle>1.2)"   #angle>1.2
+        #minMET>45. && angle > 1.2 && TMath::Abs(TMath::Log10(pvalue)) > 2  && HT < 100.)"      
 
         weight  =  "(" + pu_weight + "*"+ other_weight + "*" + dphi_weight + "*" + trig_phoid + "*" +trig_met + "*" +SF_photon+")"
 
@@ -118,8 +131,6 @@ def plot_nice1D(channel, var, bin, low, high, ylabel, xlabel, save, setLog = Fal
         histName = Type+save+channel
         
         if Type.startswith("DiPhoton") or Type.startswith("DiphotonBox"):
-            #Variables[Type].SetFillColor(ROOT.kOrange-3)
-            #Variables[Type].SetLineColor(ROOT.kOrange-3)
             Variables[Type].SetFillColor(ROOT.kMagenta-2)
             Variables[Type].SetLineColor(ROOT.kMagenta-2)
             Trees[Type].Draw(var + " >> " + histName,  "(" + cut_standard + " ) * 1 *"+weight   , "goff")
@@ -203,7 +214,6 @@ def plot_nice1D(channel, var, bin, low, high, ylabel, xlabel, save, setLog = Fal
         if Type.startswith("efake_dd"):
             Variables[Type].SetFillColor(7)
             Variables[Type].SetLineColor(7)
-            #Trees[Type].Draw(var + " >> " + histName ,  "(" + cut_standard  + ") * (0.0252) ","goff")
             Trees[Type].Draw(var + " >> " + histName ,  "(" + cut_standard  + ") * (0.0238) ","goff")
             stack.Add(Variables[Type],"hist")
             added.Add(Variables[Type])
@@ -271,13 +281,16 @@ def plot_nice1D(channel, var, bin, low, high, ylabel, xlabel, save, setLog = Fal
 
         efficiency[Type] = Variables[Type].Integral()/Nevents[Type]
 
-    
+
+
     lumi_error = 0.026
     qcd_error = 0.35 
-    efake_error = 0.1 
-    other_error = 0.05
-    pjets_error = 0.20
-
+    efake_error = 0.06 
+    pjets_error = 0.16
+    pscale_error = 0.04
+    met_error = 0.04
+    kfac_error = 0.05
+    
     ratiosys  = TH1D('Ratio2', 'Ratio2', bin, low, high)
     ratiosys = Variables['SinglePhotonParked'].Clone()
 
@@ -288,47 +301,135 @@ def plot_nice1D(channel, var, bin, low, high, ylabel, xlabel, save, setLog = Fal
 
     #List_1 = ['DiPhotonJets', 'DiphotonBox_Pt_25to250','DiphotonBox_Pt_250toInf', 'WtoLNuMu','GJets_HT_40To100','GJets_HT_100To200','GJets_HT_200To400','GJets_HT_400','WGamma','ZGamma_Inclusive','qcd_dd','efake_dd','ZGToLLG']
 
-    for hbin in range(0,uncertband.GetNbinsX()+1): 
+    fullbin = 0.
+    fullbinerror = 0.
 
-        uncert_lumi = 0.026
-        uncert_qcd = 0.35
-        uncert_efake = 0.1
-        uncert_other = 0.05
-        uncert_stat = 0.
-        uncert_pjets = 0.2
+
+    qcd_uncert = 0.
+    efake_uncert = 0.
+    GJets_uncert = 0.
+    Wg_uncert = 0.
+    Zg_uncert = 0.
+
+    if folder.startswith('Susy'):
+        MC_error = 0.075
+    else:
+        MC_error = 0.05
+        
+    for hbin in range(0,uncertband.GetNbinsX()+1): 
+        
+        uncert = 0.0
         totalbin = 0.
 
+     
+        
         for i in List_1:
+            #print i,Variables[i].GetBinContent(hbin+1)
+            if (i.startswith('qcd')):
+                #print 'QCD loop : ' , Variables[i].GetBinContent(hbin+1) ,' +/- ' , (Variables[i].GetBinContent(hbin+1)*qcd_error) , ' % ', round((Variables[i].GetBinContent(hbin+1)*qcd_error)/Variables[i].GetBinContent(hbin+1),2)*100
+                qcd_uncert += (Variables[i].GetBinContent(hbin+1)*qcd_error)
+                uncert += (Variables[i].GetBinContent(hbin+1)*qcd_error)
+                #uncert_stat += Variables[i].GetBinError(hbin+1)**2                
+            elif (i.startswith('efake')):
+                efake_uncert += (Variables[i].GetBinContent(hbin+1)*efake_error)
+                uncert += (Variables[i].GetBinContent(hbin+1)*efake_error)
+                #uncert_stat += Variables[i].GetBinError(hbin+1)**2                
+            else:
+                if (i.startswith('GJets')):
+                    GJets_uncert += Variables[i].GetBinContent(hbin+1)*0.16
+                    uncert += Variables[i].GetBinContent(hbin+1)*0.16
+                else:
+                    uncert += Variables[i].GetBinContent(hbin+1)*MC_error
+                    if (i.startswith('WGamma')):
+                        Wg_uncert += Variables[i].GetBinContent(hbin+1)*MC_error
+                    if (i.startswith('ZGamma_Inclusive')):
+                        Zg_uncert += Variables[i].GetBinContent(hbin+1)*MC_error
+                        
+                #uncert_stat += Variables[i].GetBinError(hbin+1)**2
+                
+            totalbin += round( Variables[i].GetBinContent(hbin+1),2)
 
-            if (i.startswith('qcd')): 
-                uncert_qcd += (Variables[i].GetBinContent(hbin+1)*qcd_error)
-                uncert_stat += Variables[i].GetBinError(hbin+1)**2
+        #print added.GetBinContent(hbin+1)
+        uncert = sqrt( uncert**2 + added.GetBinError(hbin+1)**2 )
+
+        #print ' '
+        #if (totalbin>0.0):
+        #    print 'Bin Content Bkg : ', totalbin, ' ', uncert, ' % ' , round(uncert/totalbin,2)*100
+        #else:
+        #    print 'Bin Content Bkg : ', totalbin, ' ', uncert, ' % 0.0 ' 
+                        
+        #print 'Bin Content Data: ', round(Variables['SinglePhotonParked'].GetBinContent(hbin+1),2), ' ',round(Variables['SinglePhotonParked'].GetBinError(hbin+1),2) , ' % ' , round(Variables['SinglePhotonParked'].GetBinError(hbin+1)/Variables['SinglePhotonParked'].GetBinContent(hbin+1),2)*100
+        #print ' ' 
+
+        fullbin += totalbin
+        fullbinerror += uncert
+        #print 'Total  : ' , fullbin ,' +/- ' ,fullbinerror, ' % ' , round(uncert/totalbin,2)*100
+        #print 'QCD    : ' , Variables['qcd_dd'].Integral(0,hbin+1), ' +/- ' ,qcd_uncert, ' % ' , round(qcd_uncert/Variables['qcd_dd'].Integral(0,hbin+1),2)*100
+        #print 'Efake  : ' , Variables['efake_dd'].Integral(0,hbin+1), ' +/- ' ,efake_uncert, ' % ' , round(efake_uncert/Variables['efake_dd'].Integral(0,hbin+1),2)*100
+        #print 'PJets  : ' , gamma_jet, ' +/- ' ,GJets_uncert, ' % ' , round(GJets_uncert/gamma_jet,2)*100
+        #print 'ZGamm  : ' , Variables['ZGamma_Inclusive'].Integral(0,hbin+1), ' +/- ' ,Zg_uncert, ' % ' , round(Zg_uncert/Variables['ZGamma_Inclusive'].Integral(0,hbin+1),2)*100
+        #print 'WGamm  : ' , Variables['WGamma'].Integral(0,hbin+1), ' +/- ' ,Wg_uncert, ' % ' , round(Wg_uncert/Variables['WGamma'].Integral(0,hbin+1),2)*100
+        #print ' '
+
+
+    
+    #lumi_error = 0.026
+    #qcd_error = 0.35 
+    #efake_error = 0.06 
+    #other_error = 0.05
+    #pjets_error = 0.20
+
+    #ratiosys  = TH1D('Ratio2', 'Ratio2', bin, low, high)
+    #ratiosys = Variables['SinglePhotonParked'].Clone()
+
+    #uncert_list = []
+    #uncertband = added.Clone();
+     
+    #List_1 = ['DiPhotonJets', 'DiphotonBox_Pt_25to250','DiphotonBox_Pt_250toInf', 'WtoLNuMu','WtoLNuTau' ,'GJets_HT_40To100','GJets_HT_100To200','GJets_HT_200To400','GJets_HT_400','WGamma','ZGamma_Inclusive','qcd_dd','efake_dd','ZGToLLG']
+
+    #List_1 = ['DiPhotonJets', 'DiphotonBox_Pt_25to250','DiphotonBox_Pt_250toInf', 'WtoLNuMu','GJets_HT_40To100','GJets_HT_100To200','GJets_HT_200To400','GJets_HT_400','WGamma','ZGamma_Inclusive','qcd_dd','efake_dd','ZGToLLG']
+
+    #for hbin in range(0,uncertband.GetNbinsX()+1): 
+
+        #uncert_lumi = 0.026
+        #uncert_qcd = 0.35
+        #uncert_efake = 0.1
+        #uncert_other = 0.05
+        #uncert_stat = 0.
+        #uncert_pjets = 0.2
+        #totalbin = 0.
+
+        #for i in List_1:
+
+         #   if (i.startswith('qcd')): 
+         #       uncert_qcd += (Variables[i].GetBinContent(hbin+1)*qcd_error)
+         #       uncert_stat += Variables[i].GetBinError(hbin+1)**2
                             
-                test = sqrt(  ((Variables[i].GetBinContent(hbin+1)*qcd_error))**2  + (Variables[i].GetBinError(hbin+1))**2 )
-
-            elif (i.startswith('efake')): 
-                uncert_efake += (Variables[i].GetBinContent(hbin+1)*efake_error)
-                uncert_stat += Variables[i].GetBinError(hbin+1)**2
+         #       test = sqrt(  ((Variables[i].GetBinContent(hbin+1)*qcd_error))**2  + (Variables[i].GetBinError(hbin+1))**2 )
+         
+         #   elif (i.startswith('efake')): 
+         #       uncert_efake += (Variables[i].GetBinContent(hbin+1)*efake_error)
+         #       uncert_stat += Variables[i].GetBinError(hbin+1)**2
                 
-                test = sqrt(  (Variables[i].GetBinContent(hbin+1)*efake_error)**2 + (Variables[i].GetBinError(hbin+1))**2 )
+         #       test = sqrt(  (Variables[i].GetBinContent(hbin+1)*efake_error)**2 + (Variables[i].GetBinError(hbin+1))**2 )
                 
-            elif (i in xsec.keys()):
+         #   elif (i in xsec.keys()):
 
-                if(i.startswith('GJet')):
-                    uncert_pjets +=(Variables[i].GetBinContent(hbin+1)*pjets_error)
-                uncert_lumi += (efficiency[i]*xsec[i])
-                uncert_other += (Variables[i].GetBinContent(hbin+1)*other_error)
-                uncert_stat += Variables[i].GetBinError(hbin+1)**2
+          #      if(i.startswith('GJet')):
+          #          uncert_pjets +=(Variables[i].GetBinContent(hbin+1)*pjets_error)
+          #      uncert_lumi += (efficiency[i]*xsec[i])
+          #      uncert_other += (Variables[i].GetBinContent(hbin+1)*other_error)
+          #      uncert_stat += Variables[i].GetBinError(hbin+1)**2
 
-                test = sqrt( (lumi_error*((efficiency[i]*xsec[i])))**2 + ((Variables[i].GetBinContent(hbin+1)*other_error))**2 + (Variables[i].GetBinError(hbin+1))**2 )
+          #      test = sqrt( (lumi_error*((efficiency[i]*xsec[i])))**2 + ((Variables[i].GetBinContent(hbin+1)*other_error))**2 + (Variables[i].GetBinError(hbin+1))**2 )
 
             #print "bin number: " ,hbin+1, " sample: " ,i," number of events: " , Variables[i].GetBinContent(hbin+1) , " uncert_efake: ", uncert_efake," uncert_qcd: ",uncert_qcd," uncert_other: ",uncert_other," uncert_stat: ", uncert_stat," uncert_lumi: ",uncert_lumi
 
 
             #print i, " bin content: ",round( Variables[i].GetBinContent(hbin+1),2), " error: " , round(test,2), " %: " , round(test/(Variables[i].GetBinContent(hbin+1) +1),2) * 100
-            totalbin += round( Variables[i].GetBinContent(hbin+1),2)
+          #  totalbin += round( Variables[i].GetBinContent(hbin+1),2)
 
-        uncert = sqrt( (lumi_error*uncert_lumi)**2 + uncert_qcd**2 + uncert_efake**2 + uncert_other**2 + uncert_stat + uncert_pjets**2)
+        #uncert = sqrt( (lumi_error*uncert_lumi)**2 + uncert_qcd**2 + uncert_efake**2 + uncert_other**2 + uncert_stat + uncert_pjets**2)
 
         #print ' ' 
         #print 'Bin Content Bkg : ', totalbin, ' ', uncert, ' % ' , round(uncert/totalbin,2)*100
@@ -338,7 +439,9 @@ def plot_nice1D(channel, var, bin, low, high, ylabel, xlabel, save, setLog = Fal
 
 
         #print "bin number: " ,hbin+1," total bkg. ",added.GetBinContent(hbin+1)," +/- ",uncert
-        sys = sqrt( (lumi_error**2)*uncert_lumi + uncert_qcd**2 + uncert_efake**2 + uncert_other**2 )
+        #sys = sqrt( (lumi_error**2)*uncert_lumi + uncert_qcd**2 + uncert_efake**2 + uncert_other**2 )
+
+
         ratiosys.SetBinContent(hbin+1,0.0)
         
         if (added.GetBinContent(hbin+1)>0):
@@ -353,7 +456,16 @@ def plot_nice1D(channel, var, bin, low, high, ylabel, xlabel, save, setLog = Fal
         uncertband.SetBinError(hbin+1,uncert);
         added.SetBinError(hbin+1,uncert);
         uncert_list.append(uncert)
-    
+
+    if save.startswith('Pho_Pt'):
+        print ' ' 
+        print 'Total  : ' , fullbin ,' +/- ' ,fullbinerror, ' % ' #, round(uncert/totalbin,2)*100
+        print 'QCD    : ' , Variables['qcd_dd'].Integral(0,hbin+1), ' +/- ' ,qcd_uncert, ' % ' #, round(qcd_uncert/Variables['qcd_dd'].Integral(0,hbin+1),2)*100
+        print 'Efake  : ' , Variables['efake_dd'].Integral(0,hbin+1), ' +/- ' ,efake_uncert, ' % ' #, round(efake_uncert/Variables['efake_dd'].Integral(0,hbin+1),2)*100
+        print 'PJets  : ' , gamma_jet, ' +/- ' ,GJets_uncert, ' % ' #, round(GJets_uncert/gamma_jet,2)*100
+        print 'ZGamm  : ' , Variables['ZGamma_Inclusive'].Integral(0,hbin+1), ' +/- ' ,Zg_uncert, ' % ' #, round(Zg_uncert/Variables['ZGamma_Inclusive'].Integral(0,hbin+1),2)*100
+        print 'WGamm  : ' , Variables['WGamma'].Integral(0,hbin+1), ' +/- ' ,Wg_uncert, ' % ' #, round(Wg_uncert/Variables['WGamma'].Integral(0,hbin+1),2)*100
+        print ' ' 
         
     Pull  = TH1D('Pull', 'Pull', bin, low, high)
     Pull.Sumw2()
@@ -365,79 +477,6 @@ def plot_nice1D(channel, var, bin, low, high, ylabel, xlabel, save, setLog = Fal
     Ratio = Variables['SinglePhotonParked'].Clone()
     Ratio.Add(added,-1)
     Ratio.Divide(added)
-
-    if (var == 'n_jets_mva_loose'):
-        njets_data  = TH1D('njets_data', 'njets_data', bin, low, high)
-        njets_data.Sumw2()
-        njets_data = Variables['SinglePhotonParked'].Clone()
-        njets_data.Add(added_nogjets,-1)
-        njets_data.Divide(justGJets)
-        for jetbin in range(0,njets_data.GetNbinsX()+1):
-            print njets_data.GetBinContent(jetbin)
-
-    if (var == 'TMath::Log10(Pho_Pt/(HT+Pho_Pt))'):
-        ReweightG_data  = TH1D('ReweightG_data', 'ReweightG_data', bin, low, high)
-        ReweightG_data.Sumw2()
-        ReweightG_data = Variables['SinglePhotonParked'].Clone()
-        ReweightG_data.Add(added_nogjets,-1)
-        ReweightG_data.Divide(justGJets)
-        b = TF1("b",'pol6')
-        ReweightG_data.Fit(b)
-        b.Print()
-        ReweightG_data.SaveAs(folder+'/Reweight_'+save+'.root')
-        for jetbin in range(0,ReweightG_data.GetNbinsX()+1):
-            print ReweightG_data.GetBinContent(jetbin)
-
-            
-    if (var == 'NVtx'):
-        ReweightNVtx_data  = TH1D('ReweightNVtx_data', 'ReweightNVtx_data', bin, low, high)
-        ReweightNVtx_data.Sumw2()
-        ReweightNVtx_data = Variables['SinglePhotonParked'].Clone()
-        ReweightNVtx_data.Add(Variables['qcd_dd'],-1)
-        ReweightNVtx_data.Add(Variables['efake_dd'],-1)
-        ReweightNVtx_data.Scale(1./ReweightNVtx_data.Integral()) # don't let NVtx reweighting change normalization
-        ReweightNVtx_mc  = TH1D('ReweightNVtx_mc', 'ReweightNVtx_mc', bin, low, high)
-        ReweightNVtx_mc.Sumw2()
-        ReweightNVtx_mc = added_mconly.Clone()
-        ReweightNVtx_mc.Scale(1./ReweightNVtx_mc.Integral())
-        ReweightNVtx_data.Divide(ReweightNVtx_mc)
-        b = TF1("b",'pol6') 
-        ReweightNVtx_data.Fit(b)
-        b.Print()
-        ReweightNVtx_data.SaveAs(folder+'/Reweight_'+save+'.root')
-
-    if (var == 'TMath::Abs(dphi_pho_met)'):
-    #if (var == 'TMath::Abs(dphi_jet_pho)'):
-        ReweightDphiMetG_data  = TH1D('ReweightDphiMetG_data', 'ReweightDphiMetG_data', bin, low, high)
-        ReweightDphiMetG_data.Sumw2()
-        ReweightDphiMetG_data = Variables['SinglePhotonParked'].Clone()
-        #ReweightDphiMetG_data.Add(added_nogjets,-1)
-        #ReweightDphiMetG_data.Divide(justGJets)
-        ReweightDphiMetG_data.Add(Variables['qcd_dd'],-1)
-        ReweightDphiMetG_data.Add(Variables['efake_dd'],-1)
-        ReweightDphiMetG_mc  = TH1D('ReweightDphiMetG_mc', 'ReweightDphiMetG_mc', bin, low, high)
-        ReweightDphiMetG_mc.Sumw2()
-        ReweightDphiMetG_mc = added_mconly.Clone()
-        ReweightDphiMetG_data.Divide(ReweightDphiMetG_mc)
-        b = TF1("b",'pol6')
-        ReweightDphiMetG_data.Fit(b)
-        b.Print()
-        ReweightDphiMetG_data.SaveAs(folder+'/Reweight_'+save+'.root')
-        
-        
-    #ratiosys = Ratio.Clone()
-
-    #for hbin in range(0,uncertband.GetNbinsX()+1): 
-        #print "data  : ", Variables['SinglePhotonParked'].GetBinContent(hbin), " ", Variables['SinglePhotonParked'].GetBinError(hbin)
-        #print "added : ", added.GetBinContent(hbin), " ", added.GetBinError(hbin)
-        #if Pull.GetBinContent(hbin) != 0:
-            #print "Pull  : ",round(Pull.GetBinContent(hbin),2), " " , round(Pull.GetBinError(hbin),2),  " Sigma: ", round(Pull.GetBinContent(hbin) /  Pull.GetBinError(hbin),2)
-        #if Ratio.GetBinContent(hbin) != 0 :
-            #print "Ratio : " ,round(Ratio.GetBinContent(hbin),2), " ",round(Ratio.GetBinError(hbin),2),  " Sigma: ", round(Ratio.GetBinContent(hbin)/Ratio.GetBinError(hbin),2)
-            #print "Sys for Ratio: ", round(ratiosys.GetBinError(hbin),2)
-
-            #                uncert/added.GetBinContent(hbin),2)
-
     
     uncertband.SetFillStyle(3244);
     uncertband.SetFillColor(33);
@@ -457,7 +496,7 @@ def plot_nice1D(channel, var, bin, low, high, ylabel, xlabel, save, setLog = Fal
     #legend . AddEntry( Variables['ZGToLLG'],"Z #rightarrow l l #gamma","f")
     #legend . AddEntry( Variables['DoubleMu'], "Data Driven Z #rightarrow #nu #nu #gamma","f")    
     #legend . AddEntry( Variables['Signal_GluGlu'], "GGF Signal X 1K", "l")
-#    legend . AddEntry( Variables['MChi_120'], "M_{#Chi} = 120", "l")
+    #legend . AddEntry( Variables['MChi_120'], "M_{#Chi} = 120", "l")
     legend . AddEntry( Variables['DM'], "Dark Matter", "l")
     legend . AddEntry( Variables['MChi_70'], "M_{#Chi} = 70","l")
     legend . AddEntry( Variables['SinglePhotonParked'], "Data", "p")
@@ -465,7 +504,7 @@ def plot_nice1D(channel, var, bin, low, high, ylabel, xlabel, save, setLog = Fal
     c4 = TCanvas("c4","c4", 900, 1000)
     c4.SetBottomMargin(0.3)
     c4.SetRightMargin(0.06)
-  #  stack.SetMaximum( stack.GetMaximum()  +  10*stack.GetMaximum() )
+    #stack.SetMaximum( stack.GetMaximum()  +  10*stack.GetMaximum() )
     #stack.SetMaximum( 0.01*stack.GetMaximum())
 
     #stack.SetMaximum(Variables['SinglePhotonParked'].GetMaximum()*10 )
@@ -505,7 +544,7 @@ def plot_nice1D(channel, var, bin, low, high, ylabel, xlabel, save, setLog = Fal
     legend.SetFillColor(0);
     legend.SetLineColor(0);
 
-    legend.Draw("same")
+    #legend.Draw("same")
     #if save.startswith('MT') or save.startswith('MET') or save.startswith('njets') or save.startswith('Pho_Pt'):
         #legend.Draw("same")
     
@@ -578,6 +617,13 @@ def plot_nice1D(channel, var, bin, low, high, ylabel, xlabel, save, setLog = Fal
         if(result):
             Ratio.Draw("esame")
 
+    f1 = TF1("f1","0",0,5000);
+    f1.SetLineColor(4);
+    f1.SetLineStyle(2);
+    f1.SetLineWidth(2);
+    f1.Draw("same")
+
+    
     if (drawRatio):
         c4.SaveAs(folder+'/StackedHisto_' + save + '.pdf')
     if (drawPull):
@@ -612,133 +658,144 @@ def plot_nice1D(channel, var, bin, low, high, ylabel, xlabel, save, setLog = Fal
     del var
 
 
-#var = "TMath::Log10(Pho_Pt/(HT+Pho_Pt))"; bin = 8; low = -1.5; high = 0.5; xaxis = "Log10(Photon Pt / ST)"; yaxis = 'Events'; save = 'Pho_Pt_ST_log'; setLog = True; finalcuts = False;channel = "VBF";
-##plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
-
-#var = "(HT+Pho_Pt)"; bin = 50; low = 0; high = 500; xaxis = "ST"; yaxis = 'Events'; save = 'ST'; setLog = True; finalcuts = False;channel = "VBF";
-##plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
-
-var = 'Pho_Pt'; bin = 45; low = 45; high = 60; xaxis = "Photon P_{T} [GeV]"; yaxis = 'Events / 0.33 GeV'; save = 'Pho_Pt'; setLog = True; finalcuts = False;channel = "VBF";
+#var = 'Pho_Pt'; bin = 45; low = 45; high = 60; xaxis = "Photon P_{T} [GeV]"; yaxis = 'Events / 0.33 GeV'; save = 'Pho_Pt'; setLog = True; finalcuts = False;channel = "VBF";
 #var = 'Pho_Pt'; bin = 15; low = 40; high = 45; xaxis = "Photon P_{T} [GeV]"; yaxis = 'Events / 25 GeV'; save = 'Pho_Pt'; setLog = True; finalcuts = False;channel = "VBF";
-#var = 'Pho_Pt'; bin = 20; low = 45; high = 545; xaxis = "Photon P_{T} [GeV]"; yaxis = 'Events / 25 GeV'; save = 'Pho_Pt'; setLog = True; finalcuts = False;channel = "VBF";
+var = 'Pho_Pt'; bin = 20; low = 45; high = 545; xaxis = "Photon P_{T} [GeV]"; yaxis = 'Events / 25 GeV'; save = 'Pho_Pt'; setLog = True; finalcuts = False;channel = "VBF";
 plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+
+
+
+var = 'n_jets_mva_loose'; bin = 10; low =0; high = 10; xaxis = "# of Jets"; yaxis = 'Events'; save ='njets'; setLog = True; finalcuts = False; channel = "VBF";
+plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+
+
+var = 'HT'; bin = 25; low = 25; high = 525;xaxis= "HT [GeV]"; yaxis = 'Events / 20 GeV'; save = 'HT'; setLog = True; finalcuts = False;channel = "VBF"
+plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+
+
+var='MT';bin = 30; low =0; high = 300; xaxis = "Transverse Mass[GeV]"; yaxis = 'Events / 10 GeV'; save = 'MT'; setLog = True; finalcuts = False;channel = "VBF"
+plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+
+
+var = 'MetSig'; bin = 20; low = 0; high = 100; xaxis = "PF ME_{T} Significance"; yaxis='Events'; save = 'pfmet_significance'; setLog = True; finalcuts = False;channel = "VBF"
+plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+
+var = 'MET'; bin = 20; low = 40; high = 540;xaxis= "PF ME_{T}[GeV]"; yaxis = 'Events / 25 GeV'; save = 'MET'; setLog = True; finalcuts = False;channel = "VBF"
+plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+
+
+var = 'angle'; bin = 80; low = 0; high = 1.6; xaxis = "angle"; yaxis = 'Events'; save = 'angle'; setLog = True; finalcuts = False;channel = "VBF";
+plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+
+var = "pvalue"; bin = 100; low =0; high = 1.0; xaxis = "P(#Chi^{2})"; yaxis = 'Events'; save = 'nolog_pvalue';setLog = True; finalcuts = False;channel = "VBF"
+plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+
 
 var='TMath::Abs(dphi_pho_met)'; bin=50; low=0; high=3.14; xaxis = "#Delta#Phi(ME_{T},#gamma)"; yaxis = 'Events'; save ='dphimetgamma'; setLog = True; finalcuts = False; channel = "VBF";
 plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 var = 'n_jets_mva_loose'; bin = 10; low =0; high = 10; xaxis = "# of Jets"; yaxis = 'Events'; save ='njets'; setLog = True; finalcuts = False; channel = "VBF";
-#plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
-
-#var = 'MET'; bin = 20; low = 45; high = 545;xaxis= "PF ME_{T} Corrected [GeV]"; yaxis = 'Events / 20 GeV'; save = 'MET'; setLog = True; finalcuts = False;channel = "VBF"
-var = 'MET'; bin = 20; low = 40; high = 540;xaxis= "PF ME_{T}[GeV]"; yaxis = 'Events / 25 GeV'; save = 'MET'; setLog = True; finalcuts = False;channel = "VBF"
 plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
-var='MT';bin = 30; low =0; high = 300; xaxis = "Transverse Mass[GeV]"; yaxis = 'Events / 10 GeV'; save = 'MT'; setLog = True; finalcuts = False;channel = "VBF"
-#plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+#var = 'MET'; bin = 20; low = 45; high = 545;xaxis= "PF ME_{T} Corrected [GeV]"; yaxis = 'Events / 20 GeV'; save = 'MET'; setLog = True; finalcuts = False;channel = "VBF"
 
 var = 'NVtx'; bin = 25; low = 0; high = 50; xaxis= "NVtx";  yaxis = 'Events'; save ='NVtx'; setLog= True; finalcuts = False; channel = "VBF";
 plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 var = 'minMET'; bin = 50; low = 0; high = 500; xaxis = "Min ME_{T} [GeV]"; yaxis = 'Events / 50 GeV'; save = 'minMET'; setLog = True; finalcuts = False;channel = "VBF"
-#plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 var = 'TMath::Abs(log10(pvalue))'; bin = 20; low = 0; high = 10; xaxis = "Log10(Prob(#Chi^{2}))"; yaxis = 'Events'; save = 'pvalue'; setLog = True; finalcuts = False; channel = "VBF"
-#plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
-var = 'MetSig'; bin = 20; low = 0; high = 100; xaxis = "PF ME_{T} Significance"; yaxis='Events'; save = 'pfmet_significance'; setLog = True; finalcuts = False;channel = "VBF"
-#plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 var='TMath::Abs(dphi_jet_pho)'; bin = 50; low =0; high = 3.5; xaxis = "#Delta#Phi(#gamma,Jet)"; yaxis = 'Events'; save ='dphiphojet'; setLog = True; finalcuts = False; channel = "VBF";
-#plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 var='TMath::Abs(dphi_jet_met)';bin = 50; low =0; high = 3.5; xaxis = "#Delta#Phi(ME_{T},Jet)"; yaxis = 'Events'; save ='dphimetjet'; setLog = True; finalcuts = False; channel = "VBF";
-#plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
-var = "TMath::Log10(Pho_Pt/jet_pt)"; bin = 60;low=-1.5; high=3; xaxis="Log10(Photon Pt / Jet Pt)"; yaxis = 'Events'; save = 'Pho_Pt_Jet_Pt'; setLog = True; finalcuts = False;channel = "VBF";
-#plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+var = "TMath::Log10(Pho_Pt/jet_pt)"; bin = 60;low=-1.5; high=3; xaxis="Log10(Photon Pt / Jet Pt)"; yaxis = 'Events'; save = 'xPho_Pt_Jet_Pt'; setLog = True; finalcuts = False;channel = "VBF";
+plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
-var = "TMath::Log10(Pho_Pt/MET)"; bin = 60; low = -1.5; high = 3; xaxis = "Log10(Photon Pt / ME_{T})"; yaxis = 'Events'; save = 'Pho_Pt_Met_log'; setLog = True; finalcuts = False;channel = "VBF";
-#plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+var = "TMath::Log10(Pho_Pt/MET)"; bin = 60; low = -1.5; high = 3; xaxis = "Log10(Photon Pt / ME_{T})"; yaxis = 'Events'; save = 'xPho_Pt_Met_log'; setLog = True; finalcuts = False;channel = "VBF";
+plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
-var = "TMath::Log10(Pho_Pt/HT)"; bin = 60; low = -1.5; high = 3; xaxis = "Log10(Photon Pt / HT)"; yaxis = 'Events'; save = 'Pho_Pt_HT_log'; setLog = True; finalcuts = False;channel = "VBF";
-#plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+var = "TMath::Log10(Pho_Pt/HT)"; bin = 60; low = -1.5; high = 3; xaxis = "Log10(Photon Pt / HT)"; yaxis = 'Events'; save = 'xPho_Pt_HT_log'; setLog = True; finalcuts = False;channel = "VBF";
+plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 #########################################################################################################################################################################
 
 
 var = 'TMath::ATan2(MEy_old,MEx_old)';  bin = 80; low = -4; high = 4; xaxis = "Old MET Phi"; yaxis = 'Events / 5 GeV'; save = 'Old_MPhi'; setLog = False; finalcuts = False;channel = "VBF";
-###plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+##plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 var = 'MPhi';  bin = 80; low = -4; high = 4; xaxis = "MET Phi"; yaxis = 'Events / 5 GeV'; save = 'MPhi'; setLog = False; finalcuts = False;channel = "VBF";
-###plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
-
-var = "Pho_Pt/HT"; bin = 100; low = 0; high = 10; xaxis = "PhoPt_HT"; yaxis = 'Events'; save = 'Pho_Pt_HT'; setLog = True; finalcuts = False;channel = "VBF";
 ##plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
-var = "Pho_Pt/MET"; bin = 100; low = 0; high = 10; xaxis = "PhoPt_MET"; yaxis = 'Events'; save = 'Pho_Pt_MET'; setLog = True; finalcuts = False;channel = "VBF";
-##plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+var = "Pho_Pt/HT"; bin = 100; low = 0; high = 10; xaxis = "PhoPt_HT"; yaxis = 'Events'; save = 'xPho_Pt_HT'; setLog = True; finalcuts = False;channel = "VBF";
+#plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+
+var = "Pho_Pt/MET"; bin = 100; low = 0; high = 10; xaxis = "PhoPt_MET"; yaxis = 'Events'; save = 'xPho_Pt_MET'; setLog = True; finalcuts = False;channel = "VBF";
+#plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 
-var = 'HT'; bin = 25; low = 25; high = 525;xaxis= "HT [GeV]"; yaxis = 'Events / 20 GeV'; save = 'HT'; setLog = True; finalcuts = False;channel = "VBF"
-##plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 
 var = 'n_jets'; bin = 10; low =0; high = 10; xaxis = "# of Jets"; yaxis = 'Events'; save ='njets_nopuid'; setLog = True; finalcuts = False; channel = "VBF";
-##plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+#plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 var = 'TMath::Abs(dphi_jet_pho)'; bin = 1; low =98; high = 100; xaxis = "dPhi(Pho,Jet)"; yaxis = 'Events'; save ='dphiphojet2'; setLog = True; finalcuts = False; channel = "VBF";
-##plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+#plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 var = 'dR_jet_met'; bin = 10; low =0; high = 5; xaxis = "dR(Met,Jet)"; yaxis = 'Events'; save ='dRmetjet'; setLog = True; finalcuts = False; channel = "VBF";
-##plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+#plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 var = 'dR_pho_met'; bin = 10; low =0; high = 5; xaxis = "dR(Met,Pho)"; yaxis = 'Events'; save ='dRmetpho'; setLog = True; finalcuts = False; channel = "VBF";
-##plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+#plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 var = 'jet_pt'; bin = 20; low = 45; high = 545; xaxis = "Jet P_{T} [GeV]"; yaxis = 'Events / 20 GeV'; save = 'Jet_Pt'; setLog = True; finalcuts = False;channel = "VBF";
-###plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+##plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 var = 'ntrack'; bin = 75; low = 0; high = 150; xaxis = "N Tracks"; yaxis = 'Events'; save = 'ntrack'; setLog = True; finalcuts = False;channel = "VBF";
-##plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+#plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 var = 'minDR'; bin = 25; low = 0; high = 5; xaxis = "minDR"; yaxis = 'Events'; save = 'mindR'; setLog = True; finalcuts = False;channel = "VBF";
-##plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+#plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 var = 'roundness'; bin = 50; low = 0; high = 1; xaxis = "roundness"; yaxis = 'Events'; save = 'roundness'; setLog = True; finalcuts = False;channel = "VBF";
-##plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+#plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
-var = 'angle'; bin = 80; low = 0; high = 1.6; xaxis = "angle"; yaxis = 'Events'; save = 'angle'; setLog = True; finalcuts = False;channel = "VBF";
-##plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 
 var = 'LICTD'; bin = 20; low =-10; high = 10; xaxis = "LICTD"; yaxis = 'Events'; save ='LICTD'; setLog = True; finalcuts = False; channel = "VBF";
-###plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+##plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 
 var = 'scEtaWidth'; bin = 50; low =0; high = 0.02; xaxis = "scEtaWidth"; yaxis = 'Events'; save ='scEtaWidth'; setLog = True; finalcuts = False; channel = "VBF";
-##plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+#plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 var = 'scPhiWidth'; bin = 100; low =0; high = 0.1; xaxis = "scPhiWidth"; yaxis = 'Events'; save ='scPhiWidth'; setLog = True; finalcuts = False; channel = "VBF";
-##plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts) 
+#plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts) 
 
 var = 'sMin'; bin = 25; low =0; high = 0.5; xaxis = "sMin"; yaxis = 'Events'; save ='sMin'; setLog = True; finalcuts = False; channel = "VBF";
-##plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+#plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 var = 'sMaj'; bin = 50; low =0; high = 1.5; xaxis = "sMaj"; yaxis = 'Events'; save ='sMaj'; setLog = True; finalcuts = False; channel = "VBF";
-##plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+#plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 var = 'seedCrystalEnergy/(e1x3+e1x5-seedCrystalEnergy)'; bin = 50; low=0.1; high = 1; xaxis="Swiss Cross Like"; yaxis = 'Events'; save = "swiss_like"; setLog = True; finalcuts = False;channel = "VBF";
-##plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+#plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 var = 'TMath::Sqrt(sigmaIPhiIPhi)'; bin = 50; low=0.0; high = 0.02; xaxis="sigmaiphiiphi"; yaxis = 'Events'; save = "iphi"; setLog = True; finalcuts = False;channel = "VBF";
-##plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+#plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 var = 'sigmaIEtaIEta'; bin = 50; low=0.0; high = 0.02; xaxis="sigmaietaieta"; yaxis = 'Events'; save = "ieta"; setLog = True; finalcuts = False;channel = "VBF";
-##plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+#plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 var = 'HoE'; bin = 100; low=0.0; high = 0.1; xaxis="HoverE"; yaxis = 'Events'; save = "hoe"; setLog = True; finalcuts = False;channel = "VBF";
-###plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+##plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 var = 'Pho_R9'; bin = 50; low=0.9; high = 1; xaxis="R9"; yaxis = 'Events'; save = "R9"; setLog = True; finalcuts = False;channel = "VBF";
-##plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+#plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 #

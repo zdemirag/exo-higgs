@@ -41,16 +41,19 @@ def makeHistos(channel,var, bin, xlow, finalcuts,varname):
         trig_met   = "((0.5*0.986*(1+TMath::Erf( (MET - 28.0) / (26.0*sqrt(2))))) * (MET>40.) )"
         
         if (Type.startswith('GJets')):
-            other_weight = "( 1.69 * (n_jets_mva_loose == 0) +  0.92 * (n_jets_mva_loose == 1) +  0.915 * (n_jets_mva_loose == 2) +  0.914 * (n_jets_mva_loose == 3) +  0.913 * (n_jets_mva_loose ==4) + 1.05 * (n_jets_mva_loose == 5) + 1.2 * (n_jets_mva_loose > 5)  )"
+            other_weight = "(1.7 * (n_jets_mva_loose == 0) + 1.1 * (n_jets_mva_loose > 0))"
+            dphi_weight = "(0.378403 - 0.159585*TMath::Abs(dphi_pho_met) + 1.35184*pow(TMath::Abs(dphi_pho_met),2) - 0.423989*pow(TMath::Abs(dphi_pho_met),3)- 0.19808*pow(TMath::Abs(dphi_pho_met),4) + 0.108294*pow(TMath::Abs(dphi_pho_met),5) - 0.0130729*pow(TMath::Abs(dphi_pho_met),6))"
+
+            #other_weight = "( 1.69 * (n_jets_mva_loose == 0) +  0.92 * (n_jets_mva_loose == 1) +  0.915 * (n_jets_mva_loose == 2) +  0.914 * (n_jets_mva_loose == 3) +  0.913 * (n_jets_mva_loose ==4) + 1.05 * (n_jets_mva_loose == 5) + 1.2 * (n_jets_mva_loose > 5)  )"
             
-            dphi_weight = "(0.353758 - 0.15625*TMath::Abs(dphi_pho_met) + 1.28186*pow(TMath::Abs(dphi_pho_met),2) - 0.429744*pow(TMath::Abs(dphi_pho_met),3)- 0.167905*pow(TMath::Abs(dphi_pho_met),4) + 0.097412*pow(TMath::Abs(dphi_pho_met),5) - 0.0118856*pow(TMath::Abs(dphi_pho_met),6))"
+            #dphi_weight = "(0.353758 - 0.15625*TMath::Abs(dphi_pho_met) + 1.28186*pow(TMath::Abs(dphi_pho_met),2) - 0.429744*pow(TMath::Abs(dphi_pho_met),3)- 0.167905*pow(TMath::Abs(dphi_pho_met),4) + 0.097412*pow(TMath::Abs(dphi_pho_met),5) - 0.0118856*pow(TMath::Abs(dphi_pho_met),6))"
             
             
         else:
             dphi_weight = "(1.0)"
             other_weight = "(1.0)"
             
-        cut_standard ="(Pho_Pt > 45 && Pho_R9>0.9 &&TMath::Abs(Pho_Eta)<1.442 && sigmaIEtaIEta > 0.001  && sqrt(sigmaIPhiIPhi) > 0.001  &&  Pho_R9<1.0    && seedCrystalEnergy/(e1x3+e1x5-seedCrystalEnergy) < 0.9 && MET>"+str(METCUT)+" && MT > "+str(MTCUT)+" && loose_mu_10==0 && foundvetoEl_10==0 && n_jets_mva_loose < 2 && (TMath::Abs(dphi_jet_pho) <2.5 || dphi_jet_pho == -99) )"
+        cut_standard ="(Pho_Pt > 45 && Pho_R9>0.9 &&TMath::Abs(Pho_Eta)<1.442 && sigmaIEtaIEta > 0.001  && sqrt(sigmaIPhiIPhi) > 0.001  &&  Pho_R9<1.0    && seedCrystalEnergy/(e1x3+e1x5-seedCrystalEnergy) < 0.9 && MET>"+str(METCUT)+" && MT > "+str(MTCUT)+" && loose_mu_10==0 && foundvetoEl_10==0 && n_jets_mva_loose < 2 && (TMath::Abs(dphi_jet_pho) <2.5 || dphi_jet_pho == -99) && TMath::Abs(dphi_pho_met) > 2.5 )"
         
         weight  =  "(" + pu_weight + "*"+ other_weight + "*" + dphi_weight + "*" + trig_phoid + "*" +trig_met + "*" +SF_photon+")"
         

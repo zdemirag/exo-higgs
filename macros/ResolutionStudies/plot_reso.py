@@ -5,7 +5,7 @@ from tdrStyle import *
 setTDRStyle()
 ROOT.gStyle.SetOptFit(0)
 
-for axis in ['ux','uy']:
+for axis in ['ex','ey']:
     for pm in ['final']:
         for width in ['sigma','rms']:
 
@@ -79,8 +79,8 @@ for axis in ['ux','uy']:
             c.SetRightMargin(0.08)
             h_width_mc.GetXaxis().SetLabelSize(0.04)
             h_width_mc.GetXaxis().SetTitle('#SigmaE_{T}-#Sigmap_{T}^{vis.} [GeV]')
-            if (axis=='ux'): h_width_mc.GetYaxis().SetTitle("#sigma(U_{x}) [GeV]")
-            if (axis=='uy'): h_width_mc.GetYaxis().SetTitle("#sigma(U_{y}) [GeV]")
+            if (axis=='ex'): h_width_mc.GetYaxis().SetTitle("#sigma(ME_{x}) [GeV]")
+            if (axis=='ey'): h_width_mc.GetYaxis().SetTitle("#sigma(ME_{y}) [GeV]")
             h_width_mc.SetLineColor(4)
             h_width_mc.SetMarkerColor(4)
             fmc.SetLineColor(4)
@@ -94,14 +94,14 @@ for axis in ['ux','uy']:
             latex2.SetTextFont(42)
             latex2.SetTextAlign(11)
             latex2.SetTextSize(0.5*c.GetTopMargin())
-            if (axis=='ux'): latex2.DrawLatex(0.45,0.32,"#sigma(U_{x})_{MC} = "+str(round(fmc.GetParameter(0),3))+" #sqrt{#SigmaE_{T}-#Sigmap_{T}^{vis}}+ ("+str(round(fmc.GetParameter(1),3))+")")
-            if (axis=='uy'): latex2.DrawLatex(0.45,0.32,"#sigma(U_{y})_{MC} = "+str(round(fmc.GetParameter(0),3))+" #sqrt{#SigmaE_{T}-#Sigmap_{T}^{vis}}+ ("+str(round(fmc.GetParameter(1),3))+")")
+            if (axis=='ex'): latex2.DrawLatex(0.45,0.32,"#sigma(ME_{x})_{MC} = "+str(round(fmc.GetParameter(0),3))+" #sqrt{#SigmaE_{T}-#Sigmap_{T}^{vis}}+ ("+str(round(fmc.GetParameter(1),3))+")")
+            if (axis=='ey'): latex2.DrawLatex(0.45,0.32,"#sigma(ME_{y})_{MC} = "+str(round(fmc.GetParameter(0),3))+" #sqrt{#SigmaE_{T}-#Sigmap_{T}^{vis}}+ ("+str(round(fmc.GetParameter(1),3))+")")
             fdata.SetLineColor(1)
             h_width_data.Draw("epsame")
             h_width_data.Fit(fdata,"N+")
             fdata.Draw("same")
-            if (axis=='ux'): latex2.DrawLatex(0.45,0.24,"#sigma(U_{x})_{Data} = "+str(round(fdata.GetParameter(0),3))+" #sqrt{#SigmaE_{T}-#Sigmap_{T}^{vis}}+ ("+str(round(fdata.GetParameter(1),3))+")")
-            if (axis=='uy'): latex2.DrawLatex(0.45,0.24,"#sigma(U_{y})_{Data} = "+str(round(fdata.GetParameter(0),3))+" #sqrt{#SigmaE_{T}-#Sigmap_{T}^{vis}}+ ("+str(round(fdata.GetParameter(1),3))+")")
+            if (axis=='ex'): latex2.DrawLatex(0.45,0.24,"#sigma(ME_{x})_{Data} = "+str(round(fdata.GetParameter(0),3))+" #sqrt{#SigmaE_{T}-#Sigmap_{T}^{vis}}+ ("+str(round(fdata.GetParameter(1),3))+")")
+            if (axis=='ey'): latex2.DrawLatex(0.45,0.24,"#sigma(ME_{y})_{Data} = "+str(round(fdata.GetParameter(0),3))+" #sqrt{#SigmaE_{T}-#Sigmap_{T}^{vis}}+ ("+str(round(fdata.GetParameter(1),3))+")")
             latex2.SetTextSize(0.5*c.GetTopMargin())
             latex2.SetTextFont(42)
             latex2.SetTextAlign(31) # align right                                       

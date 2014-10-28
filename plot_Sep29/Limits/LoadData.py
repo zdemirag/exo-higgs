@@ -27,7 +27,6 @@ Nevents = {}
 Nevents['DM'] = 84000#100000.
 
 Nevents['MChi_70'] = 199079
-
 Nevents['MChi_80'] = 191194
 Nevents['MChi_90'] = 191633
 Nevents['MChi_100'] = 198266
@@ -113,11 +112,25 @@ xsec['ZGamma_Inclusive'] = 123.9
 #xsec['ZGamma_Inclusive'] = 34.316
 xsec['ZGToLLG'] = 132.6
 
-xsec['MChi_70'] = 1.090253
-xsec['MChi_80'] = 0.820263
-xsec['MChi_90'] = 0.544212
-xsec['MChi_100'] = 0.303971
-xsec['MChi_120'] = 0.017900
+#xsec['MChi_70'] = 1.0
+#xsec['MChi_80'] = 1.0
+#xsec['MChi_90'] = 1.0
+#xsec['MChi_100'] = 1.0
+#xsec['MChi_120'] = 1.0
+
+# SM higgs
+xsec['MChi_70'] = 19.27
+xsec['MChi_80'] = 19.27
+xsec['MChi_90'] = 19.27
+xsec['MChi_100'] = 19.27
+xsec['MChi_120'] = 19.27
+
+#Theory
+#xsec['MChi_70'] = 1.090253
+#xsec['MChi_80'] = 0.820263
+#xsec['MChi_90'] = 0.544212
+#xsec['MChi_100'] = 0.303971
+#xsec['MChi_120'] = 0.017900
 
 xsec['Data_VBF_2012C']            = 1.0
 xsec['SinglePhotonParked']            = 1.0

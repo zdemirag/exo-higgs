@@ -8,13 +8,8 @@ RootFiles = {}
 Trees = {}
 
 #outdir = "/data1/zdemirag/Exo_Higgs_Analyzer/CMSSW_5_3_9/src/Jet30_NVtx/Jet_30_NVtx/higgsHistograms_"
-#outdir = "/data1/zdemirag/Exo_Higgs_Analyzer/CMSSW_5_3_9/src/root_NewReso/NewReso_Results/higgsHistograms_"
+
 outdir = "/data1/zdemirag/Exo_Higgs_Analyzer/CMSSW_5_3_9/src/Oct14_NewReso_Root/met_pog_reso_x/higgsHistograms_"
-
-
-
-#outdir = "/data1/zdemirag/Exo_Higgs_Analyzer/CMSSW_5_3_9/src/Jet40_NVtx/final/higgsHistograms_"
-#outdir = "/data1/zdemirag/Exo_Higgs_Analyzer/CMSSW_5_3_9/src/plotter_Aug17/root_Aug17/higgsHistograms_"
 
 
 #Samples = ['efake_dd','SinglePhotonParked','PJets_15to30','PJets_30to50','PJets_50to80','PJets_80to120','PJets_120to170','PJets_170to300', 'PJets_300to470', 'PJets_470to800', 'PJets_800to1400', 'PJets_1400to1800','PJets_1800', 'WGamma','DiPhotonJets', 'DiphotonBox_Pt_250toInf', 'DiphotonBox_Pt_25to250', 'WtoLNuTau' , 'WtoLNuMu', 'qcd_dd', 'ZGamma_Inclusive','DM','GJets_HT_40_100','GJets_HT_100_200','GJets_HT_200_400','GJets_HT_400','MChi_70','MChi_120','ZGToLLG']

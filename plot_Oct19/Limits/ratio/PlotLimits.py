@@ -88,10 +88,10 @@ def PlotLimits():
     expected95.Draw("a3")
     expected95.GetYaxis().SetRangeUser(0,1.5)
     expected95.GetXaxis().SetTitle("M_{#chi} [GeV]")
-    expected95.GetYaxis().SetTitle("#sigma#timesBR(H#rightarrow#tilde{G}#Chi (pb^{-1})) ")
+    expected95.GetYaxis().SetTitle("#sigma#timesBR(H#rightarrowG#Chi)/#sigma_{SM}  ")
     expected68.Draw("3same")
     expected.Draw("csame")
-    observed.Draw("cpsame")
+    #observed.Draw("cpsame")
     #theory.Draw("csame")
 
     latex = TLatex()

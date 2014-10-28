@@ -32,8 +32,9 @@ def plot_nice1D(channel, var, bin, low, high, ylabel, xlabel, save, setLog = Fal
     #folder = 'Lepton_CR'
     #folder = 'ModelIndep'
     #folder = 'SusyHiggs'
+    folder = 'Test'
 
-    folder = 'newReso'
+    #folder = 'sys_study'
     
     #No Tau
 
@@ -70,7 +71,7 @@ def plot_nice1D(channel, var, bin, low, high, ylabel, xlabel, save, setLog = Fal
 
         pu_weight  = "MyWeightData_new"
         #pu_weight  = "MyWeightData_new_sys" 
-
+        
         
 
         trig_phoid = "((0.5*0.892*(1+TMath::Erf( (Pho_Pt  + 36.8) / (43.8*sqrt(2))))) * (Pho_Pt  >30.) )"
@@ -93,7 +94,7 @@ def plot_nice1D(channel, var, bin, low, high, ylabel, xlabel, save, setLog = Fal
 
         #PRELIMINARY
         cut_standard ="(Pho_Pt > 45 && Pho_R9>0.9 &&TMath::Abs(Pho_Eta)<1.442 && sigmaIEtaIEta > 0.001  && sqrt(sigmaIPhiIPhi) > 0.001  &&  Pho_R9<1.0    && seedCrystalEnergy/(e1x3+e1x5-seedCrystalEnergy) < 0.9 && MET>40. && loose_mu_10==0 && foundvetoEl_10==0 )"
-
+        
         #LEPTON_CR
         #cut_standard= "(Pho_Pt > 45 && Pho_R9>0.9 &&TMath::Abs(Pho_Eta)<1.442 && sigmaIEtaIEta > 0.001  && sqrt(sigmaIPhiIPhi) > 0.001  && seedCrystalEnergy/(e1x3+e1x5-seedCrystalEnergy) < 0.9 &&  Pho_R9<1.0  && MET>40. && (loose_mu_10==1 || foundvetoEl_10 == 1) )"
 
@@ -101,7 +102,7 @@ def plot_nice1D(channel, var, bin, low, high, ylabel, xlabel, save, setLog = Fal
         #cut_standard ="(Pho_Pt > 45 && Pho_R9>0.9 &&TMath::Abs(Pho_Eta)<1.442 && sigmaIEtaIEta > 0.001  && sqrt(sigmaIPhiIPhi) > 0.001  &&  Pho_R9<1.0    && seedCrystalEnergy/(e1x3+e1x5-seedCrystalEnergy) < 0.9 && MET>40. && loose_mu_10==0 && foundvetoEl_10==0 && n_jets_mva_loose < 2 && (TMath::Abs(dphi_jet_pho) <2.5 || dphi_jet_pho == -99) )"
 
         #SUSYHIGGS
-        #cut_standard= "(Pho_Pt > 45 && Pho_Pt<60.  && Pho_R9>0.9 &&TMath::Abs(Pho_Eta)<1.442 && sigmaIEtaIEta > 0.001  && sqrt(sigmaIPhiIPhi) > 0.001  && seedCrystalEnergy/(e1x3+e1x5-seedCrystalEnergy) < 0.9 &&  Pho_R9<1.0  && MET>40. && MetSig > 20 && loose_mu_10==0 && foundvetoEl_10 == 0 && MT > 100. && minMET>45.)" 
+        #cut_standard= "(Pho_Pt  > 45 && Pho_Pt<60.  && Pho_R9>0.9 &&TMath::Abs(Pho_Eta)<1.442 && sigmaIEtaIEta > 0.001  && sqrt(sigmaIPhiIPhi) > 0.001  && seedCrystalEnergy/(e1x3+e1x5-seedCrystalEnergy) < 0.9 &&  Pho_R9<1.0  && MET>40. && MetSig > 20 && loose_mu_10==0 && foundvetoEl_10 == 0 && MT > 100. && minMET>45. &&  TMath::Abs(TMath::Log10(pvalue)) >2 && angle>1.2 && MT < 160 && HT < 100)" 
         
 
         weight  =  "(" + pu_weight + "*"+ other_weight + "*" + dphi_weight + "*" + trig_phoid + "*" +trig_met + "*" +SF_photon+")"
@@ -493,7 +494,7 @@ def plot_nice1D(channel, var, bin, low, high, ylabel, xlabel, save, setLog = Fal
     legend.SetFillColor(0);
     legend.SetLineColor(0);
 
-    legend.Draw("same")
+    #legend.Draw("same")
     #if save.startswith('MT') or save.startswith('MET') or save.startswith('njets') or save.startswith('Pho_Pt'):
         #legend.Draw("same")
     
@@ -578,6 +579,7 @@ def plot_nice1D(channel, var, bin, low, high, ylabel, xlabel, save, setLog = Fal
         print "Data: ", Variables['SinglePhotonParked'].Integral(0,bin+1)
 #        print "Mchi 120: ", lumi,"/pb: ",round(Variables['MChi_120'].Integral(0,bin+1),2),"Significance: ",round(Variables['MChi_120'].Integral(0,bin+1)/sqrt(totalbkg),2)
         print "Mchi 70:  ", lumi,"/pb: " ,round(Variables['MChi_70'].Integral(0,bin+1),2), "Significance: ", round(Variables['MChi_70'].Integral(0,bin+1)/sqrt(totalbkg),2)
+        print "DM:  ", lumi,"/pb: " ,round(Variables['DM'].Integral(0,bin+1),2), "Significance: ", round(Variables['DM'].Integral(0,bin+1)/sqrt(totalbkg),2)
 #        print "Mchi 80:  ", lumi,"/pb: " ,round(Variables['MChi_80'].Integral(0,bin+1),2), "Significance: ", round(Variables['MChi_80'].Integral(0,bin+1)/sqrt(totalbkg),2)
 #        print "Mchi 90:  ", lumi,"/pb: " ,round(Variables['MChi_90'].Integral(0,bin+1),2), "Significance: ", round(Variables['MChi_90'].Integral(0,bin+1)/sqrt(totalbkg),2)
 #        print "Mchi 100:  ", lumi,"/pb: " ,round(Variables['MChi_100'].Integral(0,bin+1),2), "Significance: ", round(Variables['MChi_100'].Integral(0,bin+1)/sqrt(totalbkg),2)
@@ -601,33 +603,37 @@ def plot_nice1D(channel, var, bin, low, high, ylabel, xlabel, save, setLog = Fal
 
 
 #var = "TMath::Log10(Pho_Pt/(HT+Pho_Pt))"; bin = 8; low = -1.5; high = 0.5; xaxis = "Log10(Photon Pt / ST)"; yaxis = 'Events'; save = 'Pho_Pt_ST_log'; setLog = True; finalcuts = False;channel = "VBF";
-##plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+#plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 #var = "(HT+Pho_Pt)"; bin = 50; low = 0; high = 500; xaxis = "ST"; yaxis = 'Events'; save = 'ST'; setLog = True; finalcuts = False;channel = "VBF";
-##plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+#plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 #var = 'Pho_Pt'; bin = 45; low = 45; high = 60; xaxis = "Photon P_{T} [GeV]"; yaxis = 'Events / 0.33 GeV'; save = 'Pho_Pt'; setLog = True; finalcuts = False;channel = "VBF";
 #var = 'Pho_Pt'; bin = 15; low = 40; high = 45; xaxis = "Photon P_{T} [GeV]"; yaxis = 'Events / 25 GeV'; save = 'Pho_Pt'; setLog = True; finalcuts = False;channel = "VBF";
 var = 'Pho_Pt'; bin = 20; low = 45; high = 545; xaxis = "Photon P_{T} [GeV]"; yaxis = 'Events / 25 GeV'; save = 'Pho_Pt'; setLog = True; finalcuts = False;channel = "VBF";
 plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
+var = 'ntrack'; bin = 15; low = 0; high = 150; xaxis = "N Tracks"; yaxis = 'Events'; save = 'ntrack'; setLog = True; finalcuts = False;channel = "VBF";
+plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+
+
 var='TMath::Abs(dphi_pho_met)'; bin=50; low=0; high=3.14; xaxis = "#Delta#Phi(ME_{T},#gamma)"; yaxis = 'Events'; save ='dphimetgamma'; setLog = True; finalcuts = False; channel = "VBF";
-#plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 var = 'n_jets_mva_loose'; bin = 10; low =0; high = 10; xaxis = "# of Jets"; yaxis = 'Events'; save ='njets'; setLog = True; finalcuts = False; channel = "VBF";
-#plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 #var = 'MET'; bin = 20; low = 45; high = 545;xaxis= "PF ME_{T} Corrected [GeV]"; yaxis = 'Events / 20 GeV'; save = 'MET'; setLog = True; finalcuts = False;channel = "VBF"
 var = 'MET'; bin = 20; low = 40; high = 540;xaxis= "PF ME_{T}[GeV]"; yaxis = 'Events / 25 GeV'; save = 'MET'; setLog = True; finalcuts = False;channel = "VBF"
-#plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 var='MT';bin = 30; low =0; high = 300; xaxis = "Transverse Mass[GeV]"; yaxis = 'Events / 10 GeV'; save = 'MT'; setLog = True; finalcuts = False;channel = "VBF"
-#plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 var = 'NVtx'; bin = 25; low = 0; high = 50; xaxis= "NVtx";  yaxis = 'Events'; save ='NVtx'; setLog= True; finalcuts = False; channel = "VBF";
-#plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
-var = "pvalue"; bin = 100; low =0; high = 1; xaxis = "P(#Chi^2)"; yaxis = 'Events'; save = 'nolog_pvalue';setLog = True; finalcuts = False;channel = "VBF"
+var = "pvalue"; bin = 100; low =0; high = 1; xaxis = "P(#Chi^{2})"; yaxis = 'Events'; save = 'nolog_pvalue';setLog = True; finalcuts = False;channel = "VBF"
 plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 
@@ -640,22 +646,22 @@ plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 
 var = 'MetSig'; bin = 20; low = 0; high = 100; xaxis = "PF ME_{T} Significance"; yaxis='Events'; save = 'pfmet_significance'; setLog = True; finalcuts = False;channel = "VBF"
-#plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 var='TMath::Abs(dphi_jet_pho)'; bin = 50; low =0; high = 3.5; xaxis = "#Delta#Phi(#gamma,Jet)"; yaxis = 'Events'; save ='dphiphojet'; setLog = True; finalcuts = False; channel = "VBF";
-#plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 var='TMath::Abs(dphi_jet_met)';bin = 50; low =0; high = 3.5; xaxis = "#Delta#Phi(ME_{T},Jet)"; yaxis = 'Events'; save ='dphimetjet'; setLog = True; finalcuts = False; channel = "VBF";
-#plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 var = "TMath::Log10(Pho_Pt/jet_pt)"; bin = 60;low=-1.5; high=3; xaxis="Log10(Photon Pt / Jet Pt)"; yaxis = 'Events'; save = 'Pho_Pt_Jet_Pt'; setLog = True; finalcuts = False;channel = "VBF";
-#plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 var = "TMath::Log10(Pho_Pt/MET)"; bin = 60; low = -1.5; high = 3; xaxis = "Log10(Photon Pt / ME_{T})"; yaxis = 'Events'; save = 'Pho_Pt_Met_log'; setLog = True; finalcuts = False;channel = "VBF";
-#plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 var = "TMath::Log10(Pho_Pt/HT)"; bin = 60; low = -1.5; high = 3; xaxis = "Log10(Photon Pt / HT)"; yaxis = 'Events'; save = 'Pho_Pt_HT_log'; setLog = True; finalcuts = False;channel = "VBF";
-#plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 #########################################################################################################################################################################
 
@@ -667,72 +673,70 @@ var = 'MPhi';  bin = 80; low = -4; high = 4; xaxis = "MET Phi"; yaxis = 'Events 
 plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 var = "Pho_Pt/HT"; bin = 100; low = 0; high = 10; xaxis = "PhoPt_HT"; yaxis = 'Events'; save = 'Pho_Pt_HT'; setLog = True; finalcuts = False;channel = "VBF";
-##plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 var = "Pho_Pt/MET"; bin = 100; low = 0; high = 10; xaxis = "PhoPt_MET"; yaxis = 'Events'; save = 'Pho_Pt_MET'; setLog = True; finalcuts = False;channel = "VBF";
-##plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 
 var = 'HT'; bin = 25; low = 25; high = 525;xaxis= "HT [GeV]"; yaxis = 'Events / 20 GeV'; save = 'HT'; setLog = True; finalcuts = False;channel = "VBF"
-##plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 
 var = 'n_jets'; bin = 10; low =0; high = 10; xaxis = "# of Jets"; yaxis = 'Events'; save ='njets_nopuid'; setLog = True; finalcuts = False; channel = "VBF";
-##plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 var = 'TMath::Abs(dphi_jet_pho)'; bin = 1; low =98; high = 100; xaxis = "dPhi(Pho,Jet)"; yaxis = 'Events'; save ='dphiphojet2'; setLog = True; finalcuts = False; channel = "VBF";
-##plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 var = 'dR_jet_met'; bin = 10; low =0; high = 5; xaxis = "dR(Met,Jet)"; yaxis = 'Events'; save ='dRmetjet'; setLog = True; finalcuts = False; channel = "VBF";
-##plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 var = 'dR_pho_met'; bin = 10; low =0; high = 5; xaxis = "dR(Met,Pho)"; yaxis = 'Events'; save ='dRmetpho'; setLog = True; finalcuts = False; channel = "VBF";
-##plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 var = 'jet_pt'; bin = 20; low = 45; high = 545; xaxis = "Jet P_{T} [GeV]"; yaxis = 'Events / 20 GeV'; save = 'Jet_Pt'; setLog = True; finalcuts = False;channel = "VBF";
-###plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
-var = 'ntrack'; bin = 75; low = 0; high = 150; xaxis = "N Tracks"; yaxis = 'Events'; save = 'ntrack'; setLog = True; finalcuts = False;channel = "VBF";
-##plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 var = 'minDR'; bin = 25; low = 0; high = 5; xaxis = "minDR"; yaxis = 'Events'; save = 'mindR'; setLog = True; finalcuts = False;channel = "VBF";
-##plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 var = 'roundness'; bin = 50; low = 0; high = 1; xaxis = "roundness"; yaxis = 'Events'; save = 'roundness'; setLog = True; finalcuts = False;channel = "VBF";
-##plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 var = 'angle'; bin = 80; low = 0; high = 1.6; xaxis = "angle"; yaxis = 'Events'; save = 'angle'; setLog = True; finalcuts = False;channel = "VBF";
-##plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 
 var = 'LICTD'; bin = 20; low =-10; high = 10; xaxis = "LICTD"; yaxis = 'Events'; save ='LICTD'; setLog = True; finalcuts = False; channel = "VBF";
-###plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 
 var = 'scEtaWidth'; bin = 50; low =0; high = 0.02; xaxis = "scEtaWidth"; yaxis = 'Events'; save ='scEtaWidth'; setLog = True; finalcuts = False; channel = "VBF";
-##plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 var = 'scPhiWidth'; bin = 100; low =0; high = 0.1; xaxis = "scPhiWidth"; yaxis = 'Events'; save ='scPhiWidth'; setLog = True; finalcuts = False; channel = "VBF";
-##plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts) 
+plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts) 
 
 var = 'sMin'; bin = 25; low =0; high = 0.5; xaxis = "sMin"; yaxis = 'Events'; save ='sMin'; setLog = True; finalcuts = False; channel = "VBF";
-##plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 var = 'sMaj'; bin = 50; low =0; high = 1.5; xaxis = "sMaj"; yaxis = 'Events'; save ='sMaj'; setLog = True; finalcuts = False; channel = "VBF";
-##plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 var = 'seedCrystalEnergy/(e1x3+e1x5-seedCrystalEnergy)'; bin = 50; low=0.1; high = 1; xaxis="Swiss Cross Like"; yaxis = 'Events'; save = "swiss_like"; setLog = True; finalcuts = False;channel = "VBF";
-##plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 var = 'TMath::Sqrt(sigmaIPhiIPhi)'; bin = 50; low=0.0; high = 0.02; xaxis="sigmaiphiiphi"; yaxis = 'Events'; save = "iphi"; setLog = True; finalcuts = False;channel = "VBF";
-##plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 var = 'sigmaIEtaIEta'; bin = 50; low=0.0; high = 0.02; xaxis="sigmaietaieta"; yaxis = 'Events'; save = "ieta"; setLog = True; finalcuts = False;channel = "VBF";
-##plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 var = 'HoE'; bin = 100; low=0.0; high = 0.1; xaxis="HoverE"; yaxis = 'Events'; save = "hoe"; setLog = True; finalcuts = False;channel = "VBF";
-###plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+#plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 
 var = 'Pho_R9'; bin = 50; low=0.9; high = 1; xaxis="R9"; yaxis = 'Events'; save = "R9"; setLog = True; finalcuts = False;channel = "VBF";
-##plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
+plot_nice1D(channel,var, bin, low, high, yaxis, xaxis , save, setLog, finalcuts)
 #

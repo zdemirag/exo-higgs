@@ -176,10 +176,11 @@ def PlotLimits(rootdir,metmin,metmax,mtmin,mtmax):
         string_metcuts = TH1D("s","",len(v_metcut_fixmt),0,len(v_metcut_fixmt))
         for i in range(len(v_metcut_fixmt)):
             string_metcuts.SetBinContent(i+1,1.5*min(a_obs_fixmt))
-            string_metcuts.GetXaxis().SetBinLabel(i+1,'MET>'+str(metcut_fixmt[i]))
+            string_metcuts.GetXaxis().SetBinLabel(i+1,str(metcut_fixmt[i]))
         string_metcuts.SetLineColor(0) 
         string_metcuts.SetMarkerColor(0)
         string_metcuts.GetYaxis().SetTitle("Limit [fb]")
+        string_metcuts.GetXaxis().SetTitle("Minimum MET")
         #string_metcuts.SetMinimum(0.8*min(exp68L_fixmt))
         #string_metcuts.SetMaximum(1.2*max(exp95H_fixmt))
 
@@ -197,17 +198,29 @@ def PlotLimits(rootdir,metmin,metmax,mtmin,mtmax):
         #observed.Draw("psame")
         string_metcuts.Draw("axissame")
         
+        #latex = TLatex()
+        #latex.SetNDC()
+        #latex.SetTextSize(0.04)
+        #latex.SetTextAlign(31) # align right
+        #latex.DrawLatex(0.45, 0.95, "CMS Preliminary");
+
         latex = TLatex()
         latex.SetNDC()
-        latex.SetTextSize(0.04)
-        latex.SetTextAlign(31) # align right
-        latex.DrawLatex(0.45, 0.95, "CMS Preliminary");
-    
+        latex.SetTextSize(0.75*c.GetTopMargin())
+        latex.SetTextFont(62)
+        latex.SetTextAlign(11) # align right
+        latex.DrawLatex(0.22, 0.85, "CMS");
+        latex.SetTextSize(0.5*c.GetTopMargin())
+        latex.SetTextFont(52)
+        latex.SetTextAlign(11)
+        latex.DrawLatex(0.20, 0.8, "Preliminary");
+        
+                                         
         latex2 = TLatex()
         latex2.SetNDC()
         latex2.SetTextSize(0.04)
         latex2.SetTextAlign(31) # align right
-        latex2.DrawLatex(0.87, 0.95, str(lumiPlot) + " fb^{-1} at #sqrt{s} = 8 TeV")
+        latex2.DrawLatex(0.87, 0.95, str(lumiPlot) + " fb^{-1} (8 TeV)");
     
         legend = TLegend(.7,.7,.9,.9,'MT>'+str(fixmt))
         legend . AddEntry(observed , '95% CL observed', "lp")
@@ -263,18 +276,23 @@ def PlotLimits(rootdir,metmin,metmax,mtmin,mtmax):
     expected2D.GetXaxis().SetTitle("MET cut [GeV]") 
     expected2D.GetYaxis().SetTitle("MT cut [GeV]") 
     expected2D.GetZaxis().SetTitle("Expected Limit [fb]")  
-
-    latex = TLatex() 
-    latex.SetNDC() 
-    latex.SetTextSize(0.04 )
-    latex.SetTextAlign(31) # align right 
-    latex.DrawLatex(0.45, 0.95, "CMS Preliminary"); 
+    
+    latex = TLatex()
+    latex.SetNDC()
+    latex.SetTextSize(0.75*c_exp.GetTopMargin())
+    latex.SetTextFont(62)
+    latex.SetTextAlign(11) # align right
+    latex.DrawLatex(0.22, 0.85, "CMS");
+    latex.SetTextSize(0.5*c_exp.GetTopMargin())
+    latex.SetTextFont(52)
+    latex.SetTextAlign(11)
+    latex.DrawLatex(0.20, 0.8, "Preliminary");
     
     latex2 = TLatex() 
     latex2.SetNDC() 
     latex2.SetTextSize(0.04) 
     latex2.SetTextAlign(31) # align right 
-    latex2.DrawLatex(0.87, 0.95, str(lumiPlot) + " fb^{-1} at #sqrt{s} = 8 TeV") 
+    latex2.DrawLatex(0.87, 0.95, str(lumiPlot) + " fb^{-1} (8 TeV)") 
 
     c_exp.SaveAs('2DLimitPlot_expected_met'+str(metmin)+'to'+str(metmax)+'_mt'+str(mtmin)+'to'+str(mtmax)+'.root') 
     c_exp.SaveAs('2DLimitPlot_expected_met'+str(metmin)+'to'+str(metmax)+'_mt'+str(mtmin)+'to'+str(mtmax)+'.pdf')
@@ -310,8 +328,8 @@ def PlotLimits(rootdir,metmin,metmax,mtmin,mtmax):
     del c_exp
     del c_obs
     
-PlotLimits('test_2d_script',65,100,0,1000)
-PlotLimits('test_2d_script',100,1000,0,1000)
+PlotLimits('test_2d_script',65,1000,0,1000)
+#PlotLimits('test_2d_script',100,1000,0,1000)
 #PlotLimits('test_2d_script',99,101,99,101) 
 #PlotLimits('test_2d_script',100,1000,100,1000) 
 

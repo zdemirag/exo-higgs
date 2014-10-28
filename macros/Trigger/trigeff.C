@@ -161,7 +161,8 @@ void trigeff(){
   tdrStyle->cd();
 
 
-  TFile *f = new TFile("higgsHistograms_trigger_all.root","READ");
+  //TFile *f = new TFile("higgsHistograms_trigger_all.root","READ");
+  TFile *f = new TFile("~/lnwork/lowEt_monophoton/CMSSW_5_3_4/src/RootFiles/data.root","READ");
 
   //Float_t bins[] = { 40, 45, 60, 80, 120, 500};
   //TH1F *den_data_id_vspt = new TH1F("den_data_id_vspt","den_data_id_vspt",5,bins);
@@ -234,8 +235,8 @@ void trigeff(){
   eff_data_id_vspt->Fit("erf1");
   //name->Draw("same");
   f1->Draw("same");
-  c1->SaveAs("eff_id_vspt.pdf");
-  c1->SaveAs("eff_id_vspt.png");
+  c1->SaveAs("old_root/eff_id_vspt.pdf");
+  c1->SaveAs("old_root/eff_id_vspt.png");
 
   //for(int i = 0; i< 5 ; i++) { 
   //std::cout << "value: " << eff_data_id_vspt->GetY()[i] << std::endl; }
@@ -251,8 +252,8 @@ void trigeff(){
   eff_data_met->Fit("erf2","RMBI");
   //name->Draw("same");
   f1->Draw("same");
-  c2->SaveAs("eff_met.pdf");
-  c2->SaveAs("eff_met.png");
+  c2->SaveAs("old_root/eff_met.pdf");
+  c2->SaveAs("old_root/eff_met.png");
   //for(int i = 0; i< 5 ; i++) { 
   //std::cout << "value: " << eff_data_met->GetY()[i] << std::endl; }
 

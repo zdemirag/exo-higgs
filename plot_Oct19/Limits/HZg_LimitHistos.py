@@ -37,19 +37,21 @@ def makeHistos(channel,var, bin, xlow, finalcuts,varname):
         pu_weight  = "MyWeightData_new"
 
         trig_phoid = "((0.5*0.892*(1+TMath::Erf( (Pho_Pt  + 36.8) / (43.8*sqrt(2))))) * (Pho_Pt  >30.) )"
-        trig_met   = "((0.5*0.986*(1+TMath::Erf( (MET - 28.0) / (26.0*sqrt(2))))) * (MET>40.) )"
+                
+        #trig_phoid = "((0.5*0.89*(1+TMath::Erf( (Pho_Pt  - 19.44) / (7.15*sqrt(2))))) * (Pho_Pt  >30.) )"
+        trig_met   = "((0.5*0.977*(1+TMath::Erf( (MET - 28.23) / (25.0*sqrt(2))))) * (MET>40.) )"        
 
         if (Type.startswith('GJets')):
-            other_weight = "( 1.69 * (n_jets_mva_loose == 0) +  0.92 * (n_jets_mva_loose == 1) +  0.915 * (n_jets_mva_loose == 2) +  0.914 * (n_jets_mva_loose == 3) +  0.913 * (n_jets_mva_loose ==4) + 1.05 * (n_jets_mva_loose == 5) + 1.2 * (n_jets_mva_loose > 5)  )"
-
-            dphi_weight = "(0.353758 - 0.15625*TMath::Abs(dphi_pho_met) + 1.28186*pow(TMath::Abs(dphi_pho_met),2) - 0.429744*pow(TMath::Abs(dphi_pho_met),3)- 0.167905*pow(TMath::Abs(dphi_pho_met),4) + 0.097412*pow(TMath::Abs(dphi_pho_met),5) - 0.0118856*pow(TMath::Abs(dphi_pho_met),6))"
+            other_weight = "(1.7 * (n_jets_mva_loose == 0) + 1.1 * (n_jets_mva_loose > 0))"
+            dphi_weight = "(0.378403 - 0.159585*TMath::Abs(dphi_pho_met) + 1.35184*pow(TMath::Abs(dphi_pho_met),2) - 0.423989*pow(TMath::Abs(dphi_pho_met),3)- 0.19808*pow(TMath::Abs(dphi_pho_met),4) + 0.108294*pow(TMath::Abs(dphi_pho_met),5) - 0.0130729*pow(TMath::Abs(dphi_pho_met),6))"
 
  
         else:
             dphi_weight = "(1.0)"
             other_weight = "(1.0)"
 
-            cut_standard= "(Pho_Pt > 45 && Pho_Pt<60.  && Pho_R9>0.9 &&TMath::Abs(Pho_Eta)<1.442 && sigmaIEtaIEta > 0.001  && sqrt(sigmaIPhiIPhi) > 0.001  && seedCrystalEnergy/(e1x3+e1x5-seedCrystalEnergy) < 0.9 &&  Pho_R9<1.0  && MET>40. && MetSig > 20 && loose_mu_10==0 && foundvetoEl_10 == 0 && MT > 100. && minMET>45. && TMath::Abs(TMath::Log10(pvalue)) > 2)"
+    
+        cut_standard= "(Pho_Pt > 45 && Pho_Pt<60.  && Pho_R9>0.9 &&TMath::Abs(Pho_Eta)<1.442 && sigmaIEtaIEta > 0.001  && sqrt(sigmaIPhiIPhi) > 0.001  && seedCrystalEnergy/(e1x3+e1x5-seedCrystalEnergy) < 0.9 &&  Pho_R9<1.0  && MET>40. && MetSig > 20 && loose_mu_10==0 && foundvetoEl_10 == 0 && MT > 100. && minMET>45. && TMath::Abs(TMath::Log10(pvalue)) > 2 && angle>1.2 && HT < 100)"
 
         #weight = "(1.0)"
         weight  =  "(" + pu_weight + "*"+ other_weight + "*" + dphi_weight + "*" + trig_phoid + "*" +trig_met + "*" +SF_photon+")"
@@ -89,7 +91,7 @@ def makeHistos(channel,var, bin, xlow, finalcuts,varname):
             Trees[Type].Draw(var + " >> " + histName ,  "(" + cut_standard  + ") * (0.0238) ","goff")
 
         if Type.startswith("GJets_"):
-            Trees[Type].Draw(var + " >> " + histName,  "(" + cut_standard +  ") *1.25*"+weight   , "goff")
+            Trees[Type].Draw(var + " >> " + histName,  "(" + cut_standard +  ") *1.0*"+weight   , "goff")
             Variables[Type].Scale(lumi / Nevents[Type] * xsec[Type])
 
         if Type.startswith('SUFFIX'):
@@ -123,15 +125,19 @@ def makeHistos(channel,var, bin, xlow, finalcuts,varname):
     Variables['DiPhotonJets'].Write()
 
     Variables['WtoLNuTau'].Add(Variables['WtoLNuMu'])
-    Variables['WtoLNuTau'].SetName('WtoLNu')
-    Variables['WtoLNuTau'].SetTitle('WtoLNu')
+    Variables['WtoLNuTau'].Add(Variables['ZGToLLG'])
+    Variables['WtoLNuTau'].Add(Variables['DiphotonBox_Pt_250toInf'])
+    Variables['WtoLNuTau'].Add(Variables['DiphotonBox_Pt_25to250'])
+    Variables['WtoLNuTau'].Add(Variables['DiPhotonJets'])
+    Variables['WtoLNuTau'].SetName('Other')
+    Variables['WtoLNuTau'].SetTitle('Other')
     Variables['WtoLNuTau'].Write()
 
     Variables['WGamma'].SetName('WGamma')
     Variables['WGamma'].SetTitle('WGamma')
     Variables['WGamma'].Write()
 
-    Variables['ZGamma_Inclusive'].Add(Variables['ZGToLLG'])
+    #Variables['ZGamma_Inclusive'].Add(Variables['ZGToLLG'])
     Variables['ZGamma_Inclusive'].SetName('ZGamma')
     Variables['ZGamma_Inclusive'].SetTitle('ZGamma')
     Variables['ZGamma_Inclusive'].Write()
@@ -159,27 +165,30 @@ def makeHistos(channel,var, bin, xlow, finalcuts,varname):
     datacard = open('datacard_'+binname+'.txt', 'w')
     datacard.write( "#  datacard for SUFFIX signal \n")
     datacard.write( 'imax 1 number of channels \n') 
-    datacard.write( 'jmax 7 number of backgrounds \n')
-    datacard.write( 'kmax 8 number of nuisance parameters \n')
+    datacard.write( 'jmax 6 number of backgrounds \n')
+    datacard.write( 'kmax 10 number of nuisance parameters \n')
     datacard.write( '--------------- \n')
     #datacard.write( 'shapes * * '+str(f.GetName())+' $CHANNEL/$PROCESS $CHANNEL/$PROCESS_$SYSTEMATIC \n' )
     datacard.write( '--------------- \n')
     datacard.write( 'bin        '+binname+' \n')
     datacard.write( 'observation '+str(round(Variables['SinglePhotonParked'].Integral(),5))+' \n')
     datacard.write( '--------------- \n')
-    datacard.write( 'bin     '+binname+' '+binname+' '+binname+' '+binname+' '+binname+' '+binname+' '+binname+' '+binname+' \n')
-    datacard.write( 'process '+binname+' DiPhoton WtoLNu  WGamma  ZGamma  QCD     EFake   PJets \n')
-    datacard.write( 'process 0       1        2       3       4       5       6       7 \n')
-    datacard.write( 'rate    '+str(round(Variables['SUFFIX'].Integral(),3))+'   '+str(round(Variables['DiPhotonJets'].Integral(),3))+'     '+str(round(Variables['WtoLNuTau'].Integral(),3))+' '+str(round(Variables['WGamma'].Integral(),3))+' '+str(round(Variables['ZGamma_Inclusive'].Integral(),3))+' '+str(round(Variables['qcd_dd'].Integral(),3))+' '+str(round(Variables['efake_dd'].Integral(),3))+' '+str(round(Variables['GJets_HT_40To100'].Integral(),3))+' \n')
+    datacard.write( 'bin     '+binname+' '+binname+' '+binname+' '+binname+' '+binname+' '+binname+' '+binname+' \n')
+    datacard.write( 'process '+binname+'  Other  WGamma  ZGamma    QCD     EFake   PJets \n')
+    datacard.write( 'process 0       1      2       3       4       5       6       \n')
+    #datacard.write( 'rate    '+str(round(Variables['SUFFIX'].Integral(),3))+'   '+str(round(Variables['DiPhotonJets'].Integral(),3))+'     '+str(round(Variables['WtoLNuTau'].Integral(),3))+' '+str(round(Variables['WGamma'].Integral(),3))+' '+str(round(Variables['ZGamma_Inclusive'].Integral(),3))+' '+str(round(Variables['qcd_dd'].Integral(),3))+' '+str(round(Variables['efake_dd'].Integral(),3))+' '+str(round(Variables['GJets_HT_40To100'].Integral(),3))+' \n')
+    datacard.write( 'rate    '+str(round(Variables['SUFFIX'].Integral(),3))+'     '+str(round(Variables['WtoLNuTau'].Integral(),3))+' '+str(round(Variables['WGamma'].Integral(),3))+' '+str(round(Variables['ZGamma_Inclusive'].Integral(),3))+' '+str(round(Variables['qcd_dd'].Integral(),3))+' '+str(round(Variables['efake_dd'].Integral(),3))+' '+str(round(Variables['GJets_HT_40To100'].Integral(),3))+' \n')
     datacard.write( '--------------- \n')
-    datacard.write( 'lumi    lnN 1.045 1.045 1.045 1.045 1.045 1.0   1.0   1.045 \n')
-    datacard.write( 'qcd     lnN -      -      -     -    -    1.30   -     -    \n')
-    datacard.write( 'efake   lnN -      -      -     -    -     -    1.06   -    \n') 
-    datacard.write( 'reco    lnN 1.05  1.05  1.05  1.05  1.05  -   -     1.05    \n')
-    datacard.write( 'kfacorP lnN -     -     -  -  -      -     -    1.05  \n')
-    datacard.write( 'kfacorW lnN -     -     1.05  -  -      -     -    -  \n')
-    datacard.write( 'kfacorZ lnN -     -     -  1.05  -      -     -    -  \n')
-    datacard.write( 'jetcut  lnN -     -     -  -  -      -     -    1.20  \n')
+    datacard.write( 'lumi    lnN 1.026 1.026 1.026 1.026 1.0   1.0   1.026 \n')
+    datacard.write( 'qcd     lnN -            -     -    -    1.35   -     -    \n')
+    datacard.write( 'efake   lnN -            -     -    -     -    1.06   -    \n') 
+    datacard.write( 'phoEn   lnN 1.04    1.04  1.04  1.04  -   -     1.04    \n')
+    datacard.write( 'metsys  lnN 1.04    1.04  1.04  1.04  -   -     1.04    \n')
+    datacard.write( 'kfacorP lnN -          -  -  -      -     -    1.16  \n')
+    datacard.write( 'kfacorW lnN -          1.05  -  -      -     -    -  \n')
+    datacard.write( 'kfacorZ lnN -          -  1.05  -      -     -    -  \n')
+    datacard.write( 'pusys   lnN 1.01     1.01  1.01  1.01      -     -    1.01  \n')
+    datacard.write( 'pdfsig  lnN 1.1       -     -     -      -      -     -  \n')
     #datacard.write( 'jes shape 1 1 1 \n')
     #datacard.write( 'jer shape 1 1 1 \n')
     datacard.close()

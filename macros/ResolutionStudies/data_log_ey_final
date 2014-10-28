@@ -1,0 +1,980 @@
+Error in <TFile::TFile>: file /data1/zdemirag/Exo_Higgs_Analyzer/CMSSW_5_3_9/src/macros/ResolutionStudies/NewReso_Unclustered/higgsHistograms_efake_dd.root does not exist
+Error in <TFile::TFile>: file /data1/zdemirag/Exo_Higgs_Analyzer/CMSSW_5_3_9/src/macros/ResolutionStudies/NewReso_Unclustered/higgsHistograms_qcd_dd.root does not exist
+Error in <TFile::TFile>: file /data1/zdemirag/Exo_Higgs_Analyzer/CMSSW_5_3_9/src/macros/ResolutionStudies/NewReso_Unclustered/higgsHistograms_DM.root does not exist
+(class RooDoubleSidedCB)525907744
+
+==========================================
+Defining RooDataSet for  SinglePhotonParked
+Trees Passed Entries:  1174949
+[#1] INFO:Eval -- RooAbsReal::attachToTree(ST_after) TTree Float_t branch ST_after will be converted to double precision
+[#1] INFO:Eval -- RooAbsReal::attachToTree(Pho_Pt) TTree Float_t branch Pho_Pt will be converted to double precision
+[#1] INFO:Eval -- RooAbsReal::attachToTree(MEx) TTree Float_t branch MEx will be converted to double precision
+[#1] INFO:Eval -- RooAbsReal::attachToTree(MEy) TTree Float_t branch MEy will be converted to double precision
+[#1] INFO:Eval -- RooAbsReal::attachToTree(Pho_Px) TTree Float_t branch Pho_Px will be converted to double precision
+[#1] INFO:Eval -- RooAbsReal::attachToTree(Pho_Py) TTree Float_t branch Pho_Py will be converted to double precision
+[#1] INFO:Eval -- RooAbsReal::attachToTree(HX) TTree Float_t branch HX will be converted to double precision
+[#1] INFO:Eval -- RooAbsReal::attachToTree(HY) TTree Float_t branch HY will be converted to double precision
+******* SinglePhotonParked   1.0   1.0
+Combined datasetRooDataSet::dataset_all[ST_after,Pho_Pt,MyWeightData_new,MEx,MEy,Pho_Px,Pho_Py,HX,HY,weight:w] = 1174949 entries (1.87545e+09 weighted)
+ None
+Combined DatasetRooDataSet::dataset_all[ST_after,Pho_Pt,MyWeightData_new,MEx,MEy,Pho_Px,Pho_Py,HX,HY,weight:w] = 1174949 entries (1.87545e+09 weighted)
+ None
+Combined RooDataSet: RooDataSet::dataset_all[ST_after,Pho_Pt,MyWeightData_new,MEx,MEy,Pho_Px,Pho_Py,HX,HY,my_variable,weight:w] = 1174949 entries (1.87545e+09 weighted)
+ None
+(ST_after>0 && ST_after<100)
+[#1] INFO:Eval -- RooRealVar::setRange(my_variable) new range named 'fit' created with bounds [-22.2049,22.2049]
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Eval -- RooRealVar::setRange(my_variable) new range named 'NormalizationRangeForfit' created with bounds [-1e+30,1e+30]
+[#1] INFO:Eval -- RooRealVar::setRange(my_variable) new range named 'fit_nll_v_dataset_all' created with bounds [-22.2049,22.2049]
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+[#1] INFO:InputArguments -- RooAbsData::plotOn(dataset_all) INFO: dataset has non-integer weights, auto-selecting SumW2 errors instead of Poisson errors
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) only plotting range 'fit_nll_v_dataset_all'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_v_dataset_all'
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooImproperIntegrator1D to calculate Int(my_variable)
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable|fit_nll_v_dataset_all]_Norm[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+ MINUIT WARNING IN MIGrad    
+ ============== VARIABLE3 IS AT ITS LOWER ALLOWED LIMIT.
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+Info in <TCanvas::SaveAs>: ROOT file Data_Fits_Ey/Fits_STPrime_0to100.root has been created
+Info in <TCanvas::Print>: pdf file Data_Fits_Ey/Fits_STPrime_0to100.pdf has been created
+Info in <TCanvas::SaveSource>: C++ Macro file: Data_Fits_Ey/Fits_STPrime_0to100.C has been generated
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+(ST_after>100 && ST_after<200)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+[#1] INFO:InputArguments -- RooAbsData::plotOn(dataset_all) INFO: dataset has non-integer weights, auto-selecting SumW2 errors instead of Poisson errors
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) only plotting range 'fit_nll_v_dataset_all'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_v_dataset_all'
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooImproperIntegrator1D to calculate Int(my_variable)
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable|fit_nll_v_dataset_all]_Norm[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+Info in <TCanvas::SaveAs>: ROOT file Data_Fits_Ey/Fits_STPrime_100to200.root has been created
+Info in <TCanvas::Print>: pdf file Data_Fits_Ey/Fits_STPrime_100to200.pdf has been created
+Info in <TCanvas::SaveSource>: C++ Macro file: Data_Fits_Ey/Fits_STPrime_100to200.C has been generated
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+(ST_after>200 && ST_after<300)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+[#1] INFO:InputArguments -- RooAbsData::plotOn(dataset_all) INFO: dataset has non-integer weights, auto-selecting SumW2 errors instead of Poisson errors
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) only plotting range 'fit_nll_v_dataset_all'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_v_dataset_all'
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooImproperIntegrator1D to calculate Int(my_variable)
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable|fit_nll_v_dataset_all]_Norm[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+Info in <TCanvas::SaveAs>: ROOT file Data_Fits_Ey/Fits_STPrime_200to300.root has been created
+Info in <TCanvas::Print>: pdf file Data_Fits_Ey/Fits_STPrime_200to300.pdf has been created
+Info in <TCanvas::SaveSource>: C++ Macro file: Data_Fits_Ey/Fits_STPrime_200to300.C has been generated
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+(ST_after>300 && ST_after<400)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+ MINUIT WARNING IN MIGRAD  
+ ============== Negative diagonal element 2 in Error Matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== Negative diagonal element 3 in Error Matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== 1 added to diagonal of error matrix
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+[#1] INFO:InputArguments -- RooAbsData::plotOn(dataset_all) INFO: dataset has non-integer weights, auto-selecting SumW2 errors instead of Poisson errors
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) only plotting range 'fit_nll_v_dataset_all'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_v_dataset_all'
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooImproperIntegrator1D to calculate Int(my_variable)
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable|fit_nll_v_dataset_all]_Norm[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+ EIGENVALUES OF SECOND-DERIVATIVE MATRIX:
+        -7.6181e-01  9.9915e-01  2.7627e+00
+ MINUIT WARNING IN MIGRAD  
+ ============== MATRIX FORCED POS-DEF BY ADDING 0.764576 TO DIAGONAL.
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+Info in <TCanvas::SaveAs>: ROOT file Data_Fits_Ey/Fits_STPrime_300to400.root has been created
+Info in <TCanvas::Print>: pdf file Data_Fits_Ey/Fits_STPrime_300to400.pdf has been created
+Info in <TCanvas::SaveSource>: C++ Macro file: Data_Fits_Ey/Fits_STPrime_300to400.C has been generated
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+(ST_after>400 && ST_after<500)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+ MINUIT WARNING IN MIGRAD  
+ ============== Negative diagonal element 2 in Error Matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== Negative diagonal element 3 in Error Matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== 1 added to diagonal of error matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== Negative diagonal element 3 in Error Matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== 1 added to diagonal of error matrix
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+[#1] INFO:InputArguments -- RooAbsData::plotOn(dataset_all) INFO: dataset has non-integer weights, auto-selecting SumW2 errors instead of Poisson errors
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) only plotting range 'fit_nll_v_dataset_all'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_v_dataset_all'
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooImproperIntegrator1D to calculate Int(my_variable)
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable|fit_nll_v_dataset_all]_Norm[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+Info in <TCanvas::SaveAs>: ROOT file Data_Fits_Ey/Fits_STPrime_400to500.root has been created
+Info in <TCanvas::Print>: pdf file Data_Fits_Ey/Fits_STPrime_400to500.pdf has been created
+Info in <TCanvas::SaveSource>: C++ Macro file: Data_Fits_Ey/Fits_STPrime_400to500.C has been generated
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+(ST_after>500 && ST_after<600)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+ MINUIT WARNING IN MIGRAD  
+ ============== Negative diagonal element 2 in Error Matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== Negative diagonal element 3 in Error Matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== 1 added to diagonal of error matrix
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+[#1] INFO:InputArguments -- RooAbsData::plotOn(dataset_all) INFO: dataset has non-integer weights, auto-selecting SumW2 errors instead of Poisson errors
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) only plotting range 'fit_nll_v_dataset_all'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_v_dataset_all'
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooImproperIntegrator1D to calculate Int(my_variable)
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable|fit_nll_v_dataset_all]_Norm[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+ MINUIT WARNING IN MIGRAD  
+ ============== Negative diagonal element 3 in Error Matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== 1 added to diagonal of error matrix
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+Info in <TCanvas::SaveAs>: ROOT file Data_Fits_Ey/Fits_STPrime_500to600.root has been created
+Info in <TCanvas::Print>: pdf file Data_Fits_Ey/Fits_STPrime_500to600.pdf has been created
+Info in <TCanvas::SaveSource>: C++ Macro file: Data_Fits_Ey/Fits_STPrime_500to600.C has been generated
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+(ST_after>600 && ST_after<700)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+ EIGENVALUES OF SECOND-DERIVATIVE MATRIX:
+        -2.7603e+00  9.9986e-01  4.7605e+00
+ MINUIT WARNING IN MIGRAD  
+ ============== MATRIX FORCED POS-DEF BY ADDING 2.765084 TO DIAGONAL.
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+[#1] INFO:InputArguments -- RooAbsData::plotOn(dataset_all) INFO: dataset has non-integer weights, auto-selecting SumW2 errors instead of Poisson errors
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) only plotting range 'fit_nll_v_dataset_all'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_v_dataset_all'
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooImproperIntegrator1D to calculate Int(my_variable)
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable|fit_nll_v_dataset_all]_Norm[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+Info in <TCanvas::SaveAs>: ROOT file Data_Fits_Ey/Fits_STPrime_600to700.root has been created
+Info in <TCanvas::Print>: pdf file Data_Fits_Ey/Fits_STPrime_600to700.pdf has been created
+Info in <TCanvas::SaveSource>: C++ Macro file: Data_Fits_Ey/Fits_STPrime_600to700.C has been generated
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+(ST_after>700 && ST_after<800)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+ EIGENVALUES OF SECOND-DERIVATIVE MATRIX:
+        -2.7159e-01  9.9998e-01  2.2716e+00
+ MINUIT WARNING IN MIGRAD  
+ ============== MATRIX FORCED POS-DEF BY ADDING 0.273866 TO DIAGONAL.
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+[#1] INFO:InputArguments -- RooAbsData::plotOn(dataset_all) INFO: dataset has non-integer weights, auto-selecting SumW2 errors instead of Poisson errors
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) only plotting range 'fit_nll_v_dataset_all'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_v_dataset_all'
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooImproperIntegrator1D to calculate Int(my_variable)
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable|fit_nll_v_dataset_all]_Norm[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+Info in <TCanvas::SaveAs>: ROOT file Data_Fits_Ey/Fits_STPrime_700to800.root has been created
+Info in <TCanvas::Print>: pdf file Data_Fits_Ey/Fits_STPrime_700to800.pdf has been created
+Info in <TCanvas::SaveSource>: C++ Macro file: Data_Fits_Ey/Fits_STPrime_700to800.C has been generated
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+(ST_after>800 && ST_after<900)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+[#1] INFO:InputArguments -- RooAbsData::plotOn(dataset_all) INFO: dataset has non-integer weights, auto-selecting SumW2 errors instead of Poisson errors
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) only plotting range 'fit_nll_v_dataset_all'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_v_dataset_all'
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooImproperIntegrator1D to calculate Int(my_variable)
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable|fit_nll_v_dataset_all]_Norm[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+ MINUIT WARNING IN MIGRAD  
+ ============== Negative diagonal element 2 in Error Matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== Negative diagonal element 3 in Error Matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== 1 added to diagonal of error matrix
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+Info in <TCanvas::SaveAs>: ROOT file Data_Fits_Ey/Fits_STPrime_800to900.root has been created
+Info in <TCanvas::Print>: pdf file Data_Fits_Ey/Fits_STPrime_800to900.pdf has been created
+Info in <TCanvas::SaveSource>: C++ Macro file: Data_Fits_Ey/Fits_STPrime_800to900.C has been generated
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+(ST_after>900 && ST_after<1000)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+ EIGENVALUES OF SECOND-DERIVATIVE MATRIX:
+        -5.1252e-01  1.0107e+00  2.5018e+00
+ MINUIT WARNING IN MIGRAD  
+ ============== MATRIX FORCED POS-DEF BY ADDING 0.515017 TO DIAGONAL.
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+[#1] INFO:InputArguments -- RooAbsData::plotOn(dataset_all) INFO: dataset has non-integer weights, auto-selecting SumW2 errors instead of Poisson errors
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) only plotting range 'fit_nll_v_dataset_all'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_v_dataset_all'
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooImproperIntegrator1D to calculate Int(my_variable)
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable|fit_nll_v_dataset_all]_Norm[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+ MINUIT WARNING IN MIGRAD  
+ ============== Negative diagonal element 3 in Error Matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== 1 added to diagonal of error matrix
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+Info in <TCanvas::SaveAs>: ROOT file Data_Fits_Ey/Fits_STPrime_900to1000.root has been created
+Info in <TCanvas::Print>: pdf file Data_Fits_Ey/Fits_STPrime_900to1000.pdf has been created
+Info in <TCanvas::SaveSource>: C++ Macro file: Data_Fits_Ey/Fits_STPrime_900to1000.C has been generated
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+(ST_after>1000 && ST_after<1100)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+ MINUIT WARNING IN MIGRAD  
+ ============== Negative diagonal element 2 in Error Matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== Negative diagonal element 3 in Error Matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== 1 added to diagonal of error matrix
+ EIGENVALUES OF SECOND-DERIVATIVE MATRIX:
+        -1.7812e-02  9.9986e-01  2.0179e+00
+ MINUIT WARNING IN HESSE   
+ ============== MATRIX FORCED POS-DEF BY ADDING 0.019830 TO DIAGONAL.
+ MINUIT WARNING IN MIGRAD  
+ ============== Negative diagonal element 2 in Error Matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== Negative diagonal element 3 in Error Matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== 1 added to diagonal of error matrix
+ EIGENVALUES OF SECOND-DERIVATIVE MATRIX:
+        -1.8741e-02  9.9986e-01  2.0189e+00
+ MINUIT WARNING IN HESSE   
+ ============== MATRIX FORCED POS-DEF BY ADDING 0.020760 TO DIAGONAL.
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+ EIGENVALUES OF SECOND-DERIVATIVE MATRIX:
+        -8.8370e-02  9.9408e-01  2.0943e+00
+ MINUIT WARNING IN HESSE   
+ ============== MATRIX FORCED POS-DEF BY ADDING 0.090465 TO DIAGONAL.
+[#1] INFO:InputArguments -- RooAbsData::plotOn(dataset_all) INFO: dataset has non-integer weights, auto-selecting SumW2 errors instead of Poisson errors
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) only plotting range 'fit_nll_v_dataset_all'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_v_dataset_all'
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooImproperIntegrator1D to calculate Int(my_variable)
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable|fit_nll_v_dataset_all]_Norm[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+ MINUIT WARNING IN MIGRAD  
+ ============== Negative diagonal element 3 in Error Matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== 1 added to diagonal of error matrix
+ EIGENVALUES OF SECOND-DERIVATIVE MATRIX:
+        -1.8743e-02  9.9986e-01  2.0189e+00
+ MINUIT WARNING IN HESSE   
+ ============== MATRIX FORCED POS-DEF BY ADDING 0.020762 TO DIAGONAL.
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+Info in <TCanvas::SaveAs>: ROOT file Data_Fits_Ey/Fits_STPrime_1000to1100.root has been created
+Info in <TCanvas::Print>: pdf file Data_Fits_Ey/Fits_STPrime_1000to1100.pdf has been created
+Info in <TCanvas::SaveSource>: C++ Macro file: Data_Fits_Ey/Fits_STPrime_1000to1100.C has been generated
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+(ST_after>1100 && ST_after<1200)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+ EIGENVALUES OF SECOND-DERIVATIVE MATRIX:
+        -2.4417e-02  9.9996e-01  2.0245e+00
+ MINUIT WARNING IN MIGRAD  
+ ============== MATRIX FORCED POS-DEF BY ADDING 0.026441 TO DIAGONAL.
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+[#1] INFO:InputArguments -- RooAbsData::plotOn(dataset_all) INFO: dataset has non-integer weights, auto-selecting SumW2 errors instead of Poisson errors
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) only plotting range 'fit_nll_v_dataset_all'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_v_dataset_all'
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooImproperIntegrator1D to calculate Int(my_variable)
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable|fit_nll_v_dataset_all]_Norm[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+ EIGENVALUES OF SECOND-DERIVATIVE MATRIX:
+        -1.8206e-01  9.9994e-01  2.1821e+00
+ MINUIT WARNING IN MIGRAD  
+ ============== MATRIX FORCED POS-DEF BY ADDING 0.184244 TO DIAGONAL.
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+Info in <TCanvas::SaveAs>: ROOT file Data_Fits_Ey/Fits_STPrime_1100to1200.root has been created
+Info in <TCanvas::Print>: pdf file Data_Fits_Ey/Fits_STPrime_1100to1200.pdf has been created
+Info in <TCanvas::SaveSource>: C++ Macro file: Data_Fits_Ey/Fits_STPrime_1100to1200.C has been generated
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+(ST_after>1200 && ST_after<1300)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+[#1] INFO:InputArguments -- RooAbsData::plotOn(dataset_all) INFO: dataset has non-integer weights, auto-selecting SumW2 errors instead of Poisson errors
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) only plotting range 'fit_nll_v_dataset_all'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_v_dataset_all'
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooImproperIntegrator1D to calculate Int(my_variable)
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable|fit_nll_v_dataset_all]_Norm[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+Info in <TCanvas::SaveAs>: ROOT file Data_Fits_Ey/Fits_STPrime_1200to1300.root has been created
+Info in <TCanvas::Print>: pdf file Data_Fits_Ey/Fits_STPrime_1200to1300.pdf has been created
+Info in <TCanvas::SaveSource>: C++ Macro file: Data_Fits_Ey/Fits_STPrime_1200to1300.C has been generated
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+(ST_after>1300 && ST_after<1400)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+[#1] INFO:InputArguments -- RooAbsData::plotOn(dataset_all) INFO: dataset has non-integer weights, auto-selecting SumW2 errors instead of Poisson errors
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) only plotting range 'fit_nll_v_dataset_all'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_v_dataset_all'
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooImproperIntegrator1D to calculate Int(my_variable)
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable|fit_nll_v_dataset_all]_Norm[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+ MINUIT WARNING IN MIGrad    
+ ============== VARIABLE3 IS AT ITS LOWER ALLOWED LIMIT.
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+Info in <TCanvas::SaveAs>: ROOT file Data_Fits_Ey/Fits_STPrime_1300to1400.root has been created
+Info in <TCanvas::Print>: pdf file Data_Fits_Ey/Fits_STPrime_1300to1400.pdf has been created
+Info in <TCanvas::SaveSource>: C++ Macro file: Data_Fits_Ey/Fits_STPrime_1300to1400.C has been generated
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+(ST_after>1400 && ST_after<1500)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+[#1] INFO:InputArguments -- RooAbsData::plotOn(dataset_all) INFO: dataset has non-integer weights, auto-selecting SumW2 errors instead of Poisson errors
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) only plotting range 'fit_nll_v_dataset_all'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_v_dataset_all'
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooImproperIntegrator1D to calculate Int(my_variable)
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable|fit_nll_v_dataset_all]_Norm[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+Info in <TCanvas::SaveAs>: ROOT file Data_Fits_Ey/Fits_STPrime_1400to1500.root has been created
+Info in <TCanvas::Print>: pdf file Data_Fits_Ey/Fits_STPrime_1400to1500.pdf has been created
+Info in <TCanvas::SaveSource>: C++ Macro file: Data_Fits_Ey/Fits_STPrime_1400to1500.C has been generated
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+(ST_after>1500 && ST_after<1600)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+ MINUIT WARNING IN MIGRAD  
+ ============== Negative diagonal element 2 in Error Matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== Negative diagonal element 3 in Error Matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== 1.00001 added to diagonal of error matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== Negative diagonal element 2 in Error Matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== Negative diagonal element 3 in Error Matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== 1.00001 added to diagonal of error matrix
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+[#1] INFO:InputArguments -- RooAbsData::plotOn(dataset_all) INFO: dataset has non-integer weights, auto-selecting SumW2 errors instead of Poisson errors
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) only plotting range 'fit_nll_v_dataset_all'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_v_dataset_all'
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooImproperIntegrator1D to calculate Int(my_variable)
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable|fit_nll_v_dataset_all]_Norm[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+Info in <TCanvas::SaveAs>: ROOT file Data_Fits_Ey/Fits_STPrime_1500to1600.root has been created
+Info in <TCanvas::Print>: pdf file Data_Fits_Ey/Fits_STPrime_1500to1600.pdf has been created
+Info in <TCanvas::SaveSource>: C++ Macro file: Data_Fits_Ey/Fits_STPrime_1500to1600.C has been generated
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+(ST_after>1600 && ST_after<1700)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+[#1] INFO:InputArguments -- RooAbsData::plotOn(dataset_all) INFO: dataset has non-integer weights, auto-selecting SumW2 errors instead of Poisson errors
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) only plotting range 'fit_nll_v_dataset_all'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_v_dataset_all'
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooImproperIntegrator1D to calculate Int(my_variable)
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable|fit_nll_v_dataset_all]_Norm[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+Info in <TCanvas::SaveAs>: ROOT file Data_Fits_Ey/Fits_STPrime_1600to1700.root has been created
+Info in <TCanvas::Print>: pdf file Data_Fits_Ey/Fits_STPrime_1600to1700.pdf has been created
+Info in <TCanvas::SaveSource>: C++ Macro file: Data_Fits_Ey/Fits_STPrime_1600to1700.C has been generated
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+(ST_after>1700 && ST_after<1800)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+[#1] INFO:InputArguments -- RooAbsData::plotOn(dataset_all) INFO: dataset has non-integer weights, auto-selecting SumW2 errors instead of Poisson errors
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) only plotting range 'fit_nll_v_dataset_all'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_v_dataset_all'
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooImproperIntegrator1D to calculate Int(my_variable)
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable|fit_nll_v_dataset_all]_Norm[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+ MINUIT WARNING IN MIGrad    
+ ============== VARIABLE3 IS AT ITS LOWER ALLOWED LIMIT.
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+Info in <TCanvas::SaveAs>: ROOT file Data_Fits_Ey/Fits_STPrime_1700to1800.root has been created
+Info in <TCanvas::Print>: pdf file Data_Fits_Ey/Fits_STPrime_1700to1800.pdf has been created
+Info in <TCanvas::SaveSource>: C++ Macro file: Data_Fits_Ey/Fits_STPrime_1700to1800.C has been generated
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+(ST_after>1800 && ST_after<1900)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+ MINUIT WARNING IN MIGRAD  
+ ============== Negative diagonal element 1 in Error Matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== Negative diagonal element 2 in Error Matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== 1.0001 added to diagonal of error matrix
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+[#1] INFO:InputArguments -- RooAbsData::plotOn(dataset_all) INFO: dataset has non-integer weights, auto-selecting SumW2 errors instead of Poisson errors
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) only plotting range 'fit_nll_v_dataset_all'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_v_dataset_all'
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooImproperIntegrator1D to calculate Int(my_variable)
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable|fit_nll_v_dataset_all]_Norm[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+Info in <TCanvas::SaveAs>: ROOT file Data_Fits_Ey/Fits_STPrime_1800to1900.root has been created
+Info in <TCanvas::Print>: pdf file Data_Fits_Ey/Fits_STPrime_1800to1900.pdf has been created
+Info in <TCanvas::SaveSource>: C++ Macro file: Data_Fits_Ey/Fits_STPrime_1800to1900.C has been generated
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+(ST_after>1900 && ST_after<2000)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+[#1] INFO:InputArguments -- RooAbsData::plotOn(dataset_all) INFO: dataset has non-integer weights, auto-selecting SumW2 errors instead of Poisson errors
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) only plotting range 'fit_nll_v_dataset_all'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_v_dataset_all'
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooImproperIntegrator1D to calculate Int(my_variable)
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable|fit_nll_v_dataset_all]_Norm[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+ MINUIT WARNING IN MIGrad    
+ ============== VARIABLE3 IS AT ITS LOWER ALLOWED LIMIT.
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+Info in <TCanvas::SaveAs>: ROOT file Data_Fits_Ey/Fits_STPrime_1900to2000.root has been created
+Info in <TCanvas::Print>: pdf file Data_Fits_Ey/Fits_STPrime_1900to2000.pdf has been created
+Info in <TCanvas::SaveSource>: C++ Macro file: Data_Fits_Ey/Fits_STPrime_1900to2000.C has been generated
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+(ST_after>2000 && ST_after<2100)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+[#1] INFO:InputArguments -- RooAbsData::plotOn(dataset_all) INFO: dataset has non-integer weights, auto-selecting SumW2 errors instead of Poisson errors
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) only plotting range 'fit_nll_v_dataset_all'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_v_dataset_all'
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooImproperIntegrator1D to calculate Int(my_variable)
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable|fit_nll_v_dataset_all]_Norm[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+ MINUIT WARNING IN MIGrad    
+ ============== VARIABLE3 IS AT ITS LOWER ALLOWED LIMIT.
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+Info in <TCanvas::SaveAs>: ROOT file Data_Fits_Ey/Fits_STPrime_2000to2100.root has been created
+Info in <TCanvas::Print>: pdf file Data_Fits_Ey/Fits_STPrime_2000to2100.pdf has been created
+Info in <TCanvas::SaveSource>: C++ Macro file: Data_Fits_Ey/Fits_STPrime_2000to2100.C has been generated
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+(ST_after>2100 && ST_after<2200)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+ EIGENVALUES OF SECOND-DERIVATIVE MATRIX:
+        -3.7063e-03  1.0017e+00  2.0020e+00
+ MINUIT WARNING IN HESSE   
+ ============== MATRIX FORCED POS-DEF BY ADDING 0.005708 TO DIAGONAL.
+[#1] INFO:InputArguments -- RooAbsData::plotOn(dataset_all) INFO: dataset has non-integer weights, auto-selecting SumW2 errors instead of Poisson errors
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) only plotting range 'fit_nll_v_dataset_all'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_v_dataset_all'
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooImproperIntegrator1D to calculate Int(my_variable)
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable|fit_nll_v_dataset_all]_Norm[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+ EIGENVALUES OF SECOND-DERIVATIVE MATRIX:
+        -3.6832e-03  1.0017e+00  2.0020e+00
+ MINUIT WARNING IN HESSE   
+ ============== MATRIX FORCED POS-DEF BY ADDING 0.005685 TO DIAGONAL.
+Info in <TCanvas::SaveAs>: ROOT file Data_Fits_Ey/Fits_STPrime_2100to2200.root has been created
+Info in <TCanvas::Print>: pdf file Data_Fits_Ey/Fits_STPrime_2100to2200.pdf has been created
+Info in <TCanvas::SaveSource>: C++ Macro file: Data_Fits_Ey/Fits_STPrime_2100to2200.C has been generated
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+(ST_after>2200 && ST_after<2300)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+[#1] INFO:InputArguments -- RooAbsData::plotOn(dataset_all) INFO: dataset has non-integer weights, auto-selecting SumW2 errors instead of Poisson errors
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) only plotting range 'fit_nll_v_dataset_all'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_v_dataset_all'
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooImproperIntegrator1D to calculate Int(my_variable)
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable|fit_nll_v_dataset_all]_Norm[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+Info in <TCanvas::SaveAs>: ROOT file Data_Fits_Ey/Fits_STPrime_2200to2300.root has been created
+Info in <TCanvas::Print>: pdf file Data_Fits_Ey/Fits_STPrime_2200to2300.pdf has been created
+Info in <TCanvas::SaveSource>: C++ Macro file: Data_Fits_Ey/Fits_STPrime_2200to2300.C has been generated
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+(ST_after>2300 && ST_after<2400)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+[#1] INFO:InputArguments -- RooAbsData::plotOn(dataset_all) INFO: dataset has non-integer weights, auto-selecting SumW2 errors instead of Poisson errors
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) only plotting range 'fit_nll_v_dataset_all'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_v_dataset_all'
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooImproperIntegrator1D to calculate Int(my_variable)
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable|fit_nll_v_dataset_all]_Norm[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+Info in <TCanvas::SaveAs>: ROOT file Data_Fits_Ey/Fits_STPrime_2300to2400.root has been created
+Info in <TCanvas::Print>: pdf file Data_Fits_Ey/Fits_STPrime_2300to2400.pdf has been created
+Info in <TCanvas::SaveSource>: C++ Macro file: Data_Fits_Ey/Fits_STPrime_2300to2400.C has been generated
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+(ST_after>2400 && ST_after<2500)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+[#1] INFO:InputArguments -- RooAbsData::plotOn(dataset_all) INFO: dataset has non-integer weights, auto-selecting SumW2 errors instead of Poisson errors
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) only plotting range 'fit_nll_v_dataset_all'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_v_dataset_all'
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooImproperIntegrator1D to calculate Int(my_variable)
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable|fit_nll_v_dataset_all]_Norm[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+ MINUIT WARNING IN MIGrad    
+ ============== VARIABLE3 IS AT ITS LOWER ALLOWED LIMIT.
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+Info in <TCanvas::SaveAs>: ROOT file Data_Fits_Ey/Fits_STPrime_2400to2500.root has been created
+Info in <TCanvas::Print>: pdf file Data_Fits_Ey/Fits_STPrime_2400to2500.pdf has been created
+Info in <TCanvas::SaveSource>: C++ Macro file: Data_Fits_Ey/Fits_STPrime_2400to2500.C has been generated
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+(ST_after>2500 && ST_after<2600)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+ MINUIT WARNING IN MIGRAD  
+ ============== Negative diagonal element 1 in Error Matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== Negative diagonal element 2 in Error Matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== 1.00018 added to diagonal of error matrix
+ MINUIT WARNING IN HESSE   
+ ============== Negative diagonal element 2 in Error Matrix
+ MINUIT WARNING IN HESSE   
+ ============== 26806.5 added to diagonal of error matrix
+ EIGENVALUES OF SECOND-DERIVATIVE MATRIX:
+        -4.8788e+01  1.0004e+00  5.0787e+01
+ MINUIT WARNING IN HESSE   
+ ============== MATRIX FORCED POS-DEF BY ADDING 48.838313 TO DIAGONAL.
+ MINUIT WARNING IN HESSE   
+ ============== Negative diagonal element 2 in Error Matrix
+ MINUIT WARNING IN HESSE   
+ ============== 26806.5 added to diagonal of error matrix
+ EIGENVALUES OF SECOND-DERIVATIVE MATRIX:
+        -4.8639e+01  1.0004e+00  5.0639e+01
+ MINUIT WARNING IN HESSE   
+ ============== MATRIX FORCED POS-DEF BY ADDING 48.689943 TO DIAGONAL.
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+ MINUIT WARNING IN HESSE   
+ ============== Negative diagonal element 2 in Error Matrix
+ MINUIT WARNING IN HESSE   
+ ============== 4.10034e+07 added to diagonal of error matrix
+ EIGENVALUES OF SECOND-DERIVATIVE MATRIX:
+        -1.9683e+03  1.0004e+00  1.9703e+03
+ MINUIT WARNING IN HESSE   
+ ============== MATRIX FORCED POS-DEF BY ADDING 1970.317331 TO DIAGONAL.
+[#1] INFO:InputArguments -- RooAbsData::plotOn(dataset_all) INFO: dataset has non-integer weights, auto-selecting SumW2 errors instead of Poisson errors
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) only plotting range 'fit_nll_v_dataset_all'
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f. curve is normalized using explicit choice of ranges 'fit_nll_v_dataset_all'
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooImproperIntegrator1D to calculate Int(my_variable)
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable|fit_nll_v_dataset_all]_Norm[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+ MINUIT WARNING IN MIGRAD  
+ ============== Negative diagonal element 3 in Error Matrix
+ MINUIT WARNING IN MIGRAD  
+ ============== 1 added to diagonal of error matrix
+ MINUIT WARNING IN HESSE   
+ ============== Negative diagonal element 2 in Error Matrix
+ MINUIT WARNING IN HESSE   
+ ============== Negative diagonal element 3 in Error Matrix
+ MINUIT WARNING IN HESSE   
+ ============== 6.08961e+08 added to diagonal of error matrix
+ EIGENVALUES OF SECOND-DERIVATIVE MATRIX:
+        -5.3607e-01  1.0071e+00  2.5290e+00
+ MINUIT WARNING IN HESSE   
+ ============== MATRIX FORCED POS-DEF BY ADDING 0.538600 TO DIAGONAL.
+ MINUIT WARNING IN HESSE   
+ ============== Negative diagonal element 2 in Error Matrix
+ MINUIT WARNING IN HESSE   
+ ============== Negative diagonal element 3 in Error Matrix
+ MINUIT WARNING IN HESSE   
+ ============== 6.08935e+08 added to diagonal of error matrix
+ EIGENVALUES OF SECOND-DERIVATIVE MATRIX:
+        -5.4192e-01  1.0073e+00  2.5346e+00
+ MINUIT WARNING IN HESSE   
+ ============== MATRIX FORCED POS-DEF BY ADDING 0.544459 TO DIAGONAL.
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+ MINUIT WARNING IN HESSE   
+ ============== Negative diagonal element 2 in Error Matrix
+ MINUIT WARNING IN HESSE   
+ ============== Negative diagonal element 3 in Error Matrix
+ MINUIT WARNING IN HESSE   
+ ============== 9.31736e+11 added to diagonal of error matrix
+ EIGENVALUES OF SECOND-DERIVATIVE MATRIX:
+        -5.7340e+01  1.0063e+00  5.9334e+01
+ MINUIT WARNING IN HESSE   
+ ============== MATRIX FORCED POS-DEF BY ADDING 57.399716 TO DIAGONAL.
+Info in <TCanvas::SaveAs>: ROOT file Data_Fits_Ey/Fits_STPrime_2500to2600.root has been created
+Info in <TCanvas::Print>: pdf file Data_Fits_Ey/Fits_STPrime_2500to2600.pdf has been created
+Info in <TCanvas::SaveSource>: C++ Macro file: Data_Fits_Ey/Fits_STPrime_2500to2600.C has been generated
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+(ST_after>2600 && ST_after<2700)
+[#0] ERROR:InputArguments -- RooDataSet::moment(dataset_all) WARNING: empty dataset
+[#0] ERROR:InputArguments -- RooDataSet::moment(dataset_all) WARNING: empty dataset
+[#0] ERROR:InputArguments -- RooDataSet::moment(dataset_all) WARNING: empty dataset
+[#0] ERROR:InputArguments -- RooDataSet::moment(dataset_all) WARNING: empty dataset
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+ MINUIT WARNING IN HESSE
+ ============== Second derivative zero for parameter1
+ MINUIT WARNING IN HESSE
+ ============== Second derivative zero for parameter1
+ MINUIT WARNING IN HESSE
+ ============== Second derivative zero for parameter1
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+ MINUIT WARNING IN HESSE
+ ============== Second derivative zero for parameter1
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooImproperIntegrator1D to calculate Int(my_variable)
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable|fit_nll_v_dataset_all]_Norm[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#0] WARNING:Plotting -- At observable [x]=-150 RooVoigtian::v[ x=my_variable mean=mass width=width sigma=sigma ]
+     p.d.f normalization integral is zero or negative @ x=my_variable=-0.626108, mean=mass=-47.9426 +/- 84.1471, width=width=20 +/- 20.6117, sigma=sigma=10 +/- 25.2441
+[#0] ERROR:InputArguments -- RooDataSet::moment(dataset_all) WARNING: empty dataset
+[#0] ERROR:InputArguments -- RooDataSet::moment(dataset_all) WARNING: empty dataset
+[#0] ERROR:InputArguments -- RooDataSet::moment(dataset_all) WARNING: empty dataset
+[#0] ERROR:InputArguments -- RooDataSet::moment(dataset_all) WARNING: empty dataset
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+ MINUIT WARNING IN HESSE
+ ============== Second derivative zero for parameter1
+ MINUIT WARNING IN HESSE
+ ============== Second derivative zero for parameter1
+ MINUIT WARNING IN HESSE
+ ============== Second derivative zero for parameter1
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+ MINUIT WARNING IN HESSE
+ ============== Second derivative zero for parameter1
+[#0] ERROR:InputArguments -- RooDataSet::moment(dataset_all) WARNING: empty dataset
+[#0] ERROR:InputArguments -- RooDataSet::moment(dataset_all) WARNING: empty dataset
+[#0] ERROR:InputArguments -- RooDataSet::moment(dataset_all) WARNING: empty dataset
+[#0] ERROR:InputArguments -- RooDataSet::moment(dataset_all) WARNING: empty dataset
+[#0] ERROR:InputArguments -- RooDataSet::moment(dataset_all) WARNING: empty dataset
+[#0] ERROR:InputArguments -- RooDataSet::moment(dataset_all) WARNING: empty dataset
+Info in <TCanvas::SaveAs>: ROOT file Data_Fits_Ey/Fits_STPrime_2600to2700.root has been created
+Error in <TGaxis::PaintAxis>: wmin (0.000000) == wmax (0.000000)
+Error in <TGaxis::PaintAxis>: wmin (0.000000) == wmax (0.000000)
+Info in <TCanvas::Print>: pdf file Data_Fits_Ey/Fits_STPrime_2600to2700.pdf has been created
+Info in <TCanvas::SaveSource>: C++ Macro file: Data_Fits_Ey/Fits_STPrime_2600to2700.C has been generated
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+(ST_after>2700 && ST_after<2800)
+[#0] ERROR:InputArguments -- RooDataSet::moment(dataset_all) WARNING: empty dataset
+[#0] ERROR:InputArguments -- RooDataSet::moment(dataset_all) WARNING: empty dataset
+[#0] ERROR:InputArguments -- RooDataSet::moment(dataset_all) WARNING: empty dataset
+[#0] ERROR:InputArguments -- RooDataSet::moment(dataset_all) WARNING: empty dataset
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+ MINUIT WARNING IN HESSE
+ ============== Second derivative zero for parameter1
+ MINUIT WARNING IN HESSE
+ ============== Second derivative zero for parameter1
+ MINUIT WARNING IN HESSE
+ ============== Second derivative zero for parameter1
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+ MINUIT WARNING IN HESSE
+ ============== Second derivative zero for parameter1
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooImproperIntegrator1D to calculate Int(my_variable)
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable|fit_nll_v_dataset_all]_Norm[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#0] WARNING:Plotting -- At observable [x]=-150 RooVoigtian::v[ x=my_variable mean=mass width=width sigma=sigma ]
+     p.d.f normalization integral is zero or negative @ x=my_variable=-0.626108, mean=mass=-47.9426 +/- 84.1471, width=width=20 +/- 20.6117, sigma=sigma=10 +/- 25.2441
+[#0] ERROR:InputArguments -- RooDataSet::moment(dataset_all) WARNING: empty dataset
+[#0] ERROR:InputArguments -- RooDataSet::moment(dataset_all) WARNING: empty dataset
+[#0] ERROR:InputArguments -- RooDataSet::moment(dataset_all) WARNING: empty dataset
+[#0] ERROR:InputArguments -- RooDataSet::moment(dataset_all) WARNING: empty dataset
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+ MINUIT WARNING IN HESSE
+ ============== Second derivative zero for parameter1
+ MINUIT WARNING IN HESSE
+ ============== Second derivative zero for parameter1
+ MINUIT WARNING IN HESSE
+ ============== Second derivative zero for parameter1
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+ MINUIT WARNING IN HESSE
+ ============== Second derivative zero for parameter1
+[#0] ERROR:InputArguments -- RooDataSet::moment(dataset_all) WARNING: empty dataset
+[#0] ERROR:InputArguments -- RooDataSet::moment(dataset_all) WARNING: empty dataset
+[#0] ERROR:InputArguments -- RooDataSet::moment(dataset_all) WARNING: empty dataset
+[#0] ERROR:InputArguments -- RooDataSet::moment(dataset_all) WARNING: empty dataset
+[#0] ERROR:InputArguments -- RooDataSet::moment(dataset_all) WARNING: empty dataset
+[#0] ERROR:InputArguments -- RooDataSet::moment(dataset_all) WARNING: empty dataset
+Info in <TCanvas::SaveAs>: ROOT file Data_Fits_Ey/Fits_STPrime_2700to2800.root has been created
+Error in <TGaxis::PaintAxis>: wmin (0.000000) == wmax (0.000000)
+Error in <TGaxis::PaintAxis>: wmin (0.000000) == wmax (0.000000)
+Info in <TCanvas::Print>: pdf file Data_Fits_Ey/Fits_STPrime_2700to2800.pdf has been created
+Info in <TCanvas::SaveSource>: C++ Macro file: Data_Fits_Ey/Fits_STPrime_2700to2800.C has been generated
+TCanvas::Constructor:0: RuntimeWarning: Deleting canvas with same name: c
+(ST_after>2800 && ST_after<3000)
+[#0] ERROR:InputArguments -- RooDataSet::moment(dataset_all) WARNING: empty dataset
+[#0] ERROR:InputArguments -- RooDataSet::moment(dataset_all) WARNING: empty dataset
+[#0] ERROR:InputArguments -- RooDataSet::moment(dataset_all) WARNING: empty dataset
+[#0] ERROR:InputArguments -- RooDataSet::moment(dataset_all) WARNING: empty dataset
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+ MINUIT WARNING IN HESSE
+ ============== Second derivative zero for parameter1
+ MINUIT WARNING IN HESSE
+ ============== Second derivative zero for parameter1
+ MINUIT WARNING IN HESSE
+ ============== Second derivative zero for parameter1
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+ MINUIT WARNING IN HESSE
+ ============== Second derivative zero for parameter1
+[#1] INFO:Plotting -- RooAbsPdf::plotOn(v) p.d.f was fitted in range and no explicit plot,norm range was specified, using fit range as default
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooImproperIntegrator1D to calculate Int(my_variable)
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable|fit_nll_v_dataset_all]_Norm[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+[#0] WARNING:Plotting -- At observable [x]=-150 RooVoigtian::v[ x=my_variable mean=mass width=width sigma=sigma ]
+     p.d.f normalization integral is zero or negative @ x=my_variable=-0.626108, mean=mass=-47.9426 +/- 84.1471, width=width=20 +/- 20.6117, sigma=sigma=10 +/- 25.2441
+[#0] ERROR:InputArguments -- RooDataSet::moment(dataset_all) WARNING: empty dataset
+[#0] ERROR:InputArguments -- RooDataSet::moment(dataset_all) WARNING: empty dataset
+[#0] ERROR:InputArguments -- RooDataSet::moment(dataset_all) WARNING: empty dataset
+[#0] ERROR:InputArguments -- RooDataSet::moment(dataset_all) WARNING: empty dataset
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) constructing test statistic for sub-range named fit
+[#1] INFO:Fitting -- RooAbsOptTestStatistic::ctor(nll_v_dataset_all) fixing interpretation of coefficients of any RooAddPdf to full domain of observables 
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(v_Int[my_variable]) using numeric integrator RooIntegrator1D to calculate Int(my_variable)
+ MINUIT WARNING IN HESSE
+ ============== Second derivative zero for parameter1
+ MINUIT WARNING IN HESSE
+ ============== Second derivative zero for parameter1
+ MINUIT WARNING IN HESSE
+ ============== Second derivative zero for parameter1
+[#1] INFO:Fitting -- RooAbsPdf::fitTo(v) Calculating sum-of-weights-squared correction matrix for covariance matrix
+ MINUIT WARNING IN HESSE
+ ============== Second derivative zero for parameter1
+[#0] ERROR:InputArguments -- RooDataSet::moment(dataset_all) WARNING: empty dataset
+[#0] ERROR:InputArguments -- RooDataSet::moment(dataset_all) WARNING: empty dataset
+[#0] ERROR:InputArguments -- RooDataSet::moment(dataset_all) WARNING: empty dataset
+[#0] ERROR:InputArguments -- RooDataSet::moment(dataset_all) WARNING: empty dataset
+[#0] ERROR:InputArguments -- RooDataSet::moment(dataset_all) WARNING: empty dataset
+[#0] ERROR:InputArguments -- RooDataSet::moment(dataset_all) WARNING: empty dataset
+Info in <TCanvas::SaveAs>: ROOT file Data_Fits_Ey/Fits_STPrime_2800to3000.root has been created
+Error in <TGaxis::PaintAxis>: wmin (0.000000) == wmax (0.000000)
+Error in <TGaxis::PaintAxis>: wmin (0.000000) == wmax (0.000000)
+Info in <TCanvas::Print>: pdf file Data_Fits_Ey/Fits_STPrime_2800to3000.pdf has been created
+Info in <TCanvas::SaveSource>: C++ Macro file: Data_Fits_Ey/Fits_STPrime_2800to3000.C has been generated
+Sigma
+0  to  100
+7.40970753877  +/-  1.37504187852
+11.1024432171
+ 
+100  to  200
+11.7552709734  +/-  1.57776784106
+10.8671244733
+ 
+200  to  300
+13.2028156454  +/-  0.860456566822
+12.508936601
+ 
+300  to  400
+13.8041917835  +/-  0.874230880852
+13.6061549139
+ 
+400  to  500
+14.7621857023  +/-  0.767415945686
+14.7540204844
+ 
+500  to  600
+15.9352631705  +/-  0.759248484279
+15.816362667
+ 
+600  to  700
+17.1151920632  +/-  0.775344556839
+16.8077089856
+ 
+700  to  800
+17.9255501725  +/-  0.770210490591
+17.6332076584
+ 
+800  to  900
+19.1115462696  +/-  0.880199167167
+18.4909258277
+ 
+900  to  1000
+19.3913834421  +/-  1.09435608293
+19.2795862521
+ 
+1000  to  1100
+19.8340138869  +/-  0.513510241521
+20.1340026092
+ 
+1100  to  1200
+21.2662079362  +/-  1.3607397287
+20.7735304886
+ 
+1200  to  1300
+22.47562392  +/-  2.12603398062
+21.575069568
+ 
+1300  to  1400
+22.2467462061  +/-  2.9319981168
+22.5527632199
+ 
+1400  to  1500
+24.9856647861  +/-  3.21157532377
+23.1668403512
+ 
+1500  to  1600
+24.6043372595  +/-  5.81160207793
+23.7465077904
+ 
+1600  to  1700
+28.0882438058  +/-  7.7835584509
+24.3266307908
+ 
+1700  to  1800
+24.9373898819  +/-  8.970499253
+25.0268333221
+ 
+1800  to  1900
+32.3587892186  +/-  15.5070240759
+26.185144304
+ 
+1900  to  2000
+25.690972779  +/-  98.9429654017
+28.0320173132
+ 
+2000  to  2100
+29.1983969555  +/-  104.33849713
+27.2872947602
+ 
+2100  to  2200
+34.8823335606  +/-  102.017910816
+29.5444108062
+ 
+2200  to  2300
+26.4845895025  +/-  738.000920062
+24.2362404254
+ 
+2300  to  2400
+49.9922027639  +/-  263.743651053
+31.7569570212
+ 
+2400  to  2500
+5.7605318626  +/-  9.48952146313
+21.7447002037
+ 
+2500  to  2600
+0.0502988021524  +/-  128533.409118
+15.3154871724
+ 
+2600  to  2700
+21.8285871553  +/-  30.7203897441
+0.0
+ 
+2700  to  2800
+21.8285871553  +/-  30.7203897441
+0.0
+ 
+2800  to  3000
+21.8285871553  +/-  30.7203897441
+0.0
+ 
